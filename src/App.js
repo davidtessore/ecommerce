@@ -1,13 +1,12 @@
-import './App.scss';
-import NavBar from './components/NavBar/NavBar';
+import './styles/style.scss';
+import NavContainer from './components/NavContainer';
+import CardContainer from './components/CardContainer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header>
-        <NavBar />
-        <h1>titulo</h1>
-      </header>
+      <NavContainer/>
+      <CardContainer section="pc's"/>
     </div>
   );
 }
