@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <NavContainer/>
-      <CardContainer section="pc's"/>
+      <CardContainer section="Pc's"/>
     </div>
   );
 }

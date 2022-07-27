@@ -1,9 +1,7 @@
 .cart {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 5%;
-
+    grid-area: cart;
+    
     &__ico {
-        width: 10%;
+        width: 100%;
     }
 }

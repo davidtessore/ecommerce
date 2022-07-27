@@ -1,10 +1,19 @@
 import ProductCard from "./ProductCard";
 
-const CardContainer = ({section}) => {
-    return(
-        <section>
-            <h2>{section}</h2>
-            <ProductCard title="producto 1" price={95000} img={"pc_omen.jpg"}/>
+const product1 = {
+    img: "pc_omen.jpg",
+    title: "Hp omen",
+    price: 400000,
+    stock: 3,
+}
+
+const CardContainer = ({ section }) => {
+    return (
+        <section className="cardContainer">
+            <h2 className="cardContainer__title">{section}</h2>
+            <div className="cardContainer__content">
+                <ProductCard data = {product1}/>
+            </div>
         </section>
     );
 };

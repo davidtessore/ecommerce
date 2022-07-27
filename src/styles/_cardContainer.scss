@@ -1,0 +1,15 @@
+.cardContainer {
+    display: grid;
+    grid-template-areas: "title""content";
+
+    &__title {
+        grid-area: title;
+    }
+
+    &__content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto;
+    }
+}

@@ -1,0 +1,39 @@
+.menu {
+    grid-area: button;
+    display: grid;
+    grid-template-columns: repeat(5, 18%);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+
+
+    &__item,
+    &__item2,
+    &__itemMenu {
+        list-style: none;
+    }
+
+    &__itemMenu {
+        position: relative;
+    }
+
+    &__itemMenu:hover &__menu2 {
+        display: grid;
+    }
+
+    &__menu2 {
+        display: none;
+        position: absolute;
+        grid-template-rows: repeat(5, 20%);
+        width: 300%;
+    }
+
+    &__item2 {
+        padding: 5%;
+    }
+
+    &__link,
+    &__link2 {
+        text-decoration: none;
+    }
+}

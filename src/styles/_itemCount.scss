@@ -1,0 +1,13 @@
+.counter {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-items: center;
+
+    &__button {
+        width: 100%;
+    }
+
+    &__stock {
+        padding-left: 5%;
+    }
+}
