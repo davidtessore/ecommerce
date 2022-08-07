@@ -1,22 +1,17 @@
+import "./cardContainer.scss";
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
-import productList from "../utils/ProductsMock";
+import ItemList from "../itemList/ItemList";
+import productList from "../../utils/ProductsMock";
 
 const CardContainer = ({ section }) => {
-    const [listProducts, setListProducts] = useState([]);
-
-    const getProducts = new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(productList)
-        }, 2000);
-    });
+    const
+        [listProducts, setListProducts] = useState([]),
+        getProducts = new Promise((resolve) => { resolve(productList) });
 
     useEffect(() => {
         getProducts
-            .then((response) => { setListProducts(response) })
-
+            .then((res) => { setListProducts(res) })
             .catch((error) => { console.log("se fue todo al ping......") })
-
             .finally(() => { })
     }, []);
 

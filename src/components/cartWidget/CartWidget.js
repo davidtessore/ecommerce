@@ -1,3 +1,5 @@
+import "./cartWidget.scss";
+
 const CartWidget = () => {
     return(
         <div className="cart">

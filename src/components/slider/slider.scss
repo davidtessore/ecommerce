@@ -1,5 +1,5 @@
 .sliderContainer {
-    width: 50%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -19,7 +19,6 @@
     &__img {
         display: block;
         object-fit: cover;
-        opacity: 0.5;
         width: 100%;
         height: 100%;
     }

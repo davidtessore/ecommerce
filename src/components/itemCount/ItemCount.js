@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import "./itemCount.scss";
+import { useState } from "react";
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ data }) => {
     const
+        { stock } = data,
         [counter, setCounter] = useState(1),
         add = () => { if (counter < stock) { setCounter(counter + 1) } },
         take = () => { if (counter > 0) { setCounter(counter - 1) } };
@@ -9,9 +11,9 @@ const ItemCount = ({ stock }) => {
     return (
         <div className="counter">
             <div className="counter__container">
-                <button className="counter__button" onClick={take}>-</button>
+                <img className="counter__img" src="/assets/ico/menos.png" alt="Icono" onClick={take}/>
                 <p className="counter__count">Prod. {counter}</p>
-                <button className="counter__button" onClick={add}>+</button>
+                <img className="counter__img" src="/assets/ico/mas.png" alt="Icono" onClick={add}/>
             </div>
             <p className="counter__stock">Stock disp. {stock}</p>
         </div>

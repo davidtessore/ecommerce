@@ -1,4 +1,5 @@
-import ProductCard from "./ProductCard";
+import "./itemList.scss";
+import ProductCard from "../productCard/ProductCard";
 
 const ItemList = ({ dataProducts }) => {
     return (

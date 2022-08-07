@@ -1,16 +1,18 @@
 .counter {
     display: grid;
     grid-template-columns: 50% 50%;
-    width: 100%;
+    align-items: center;
+    width: 75%;
 
     &__container {
         display: grid;
-        grid-template-columns: 20% 40% 20%;
+        grid-template-columns: 30% 40% 30%;
         justify-items: center;
+        align-items: center;
         justify-content: center;
     }
 
-    &__button {
+    &__img {
         width: 100%;
     }
 

@@ -1,3 +1,5 @@
+import "./seeker.scss";
+
 const Seeker = () => {
     return(
         <div className="seeker">

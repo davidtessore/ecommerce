@@ -1,6 +1,7 @@
-import NavMenu from "./NavMenu";
-import Seeker from "./Seeker";
-import CartWidget from "./CartWidget";
+import "./navBar.scss";
+import NavMenu from "../navMenu/NavMenu";
+import Seeker from "../seeker/Seeker";
+import CartWidget from "../cartWidget/CartWidget";
 
 const NavBar = () => {
     return (
