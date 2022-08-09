@@ -1,0 +1,19 @@
+.description {
+    display: grid;
+    grid-template-rows: auto;
+    align-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+
+    &__titleDescription {
+        margin: 0 auto;
+    }
+
+    &__itemDescription {
+        font-weight: bolder;
+    }
+
+    &__priceDescription {
+        font-weight: bold;
+    }
+}

@@ -18,23 +18,23 @@ const SliderContainer = ({data}) => {
             next = () => {
                 let sliderSectionFirst = document.querySelectorAll(".sliderContainer__section")[0];
                 slider.style.marginLeft = "-200%";
-                slider.style.transition = "all 1s";
+                slider.style.transition = "all 0.75s";
                 setTimeout(() => {
                     slider.style.transition = "none";
                     slider.insertAdjacentElement("beforeend", sliderSectionFirst);
                     slider.style.marginLeft = "-100%";
-                }, 1000)
+                }, 750)
             },
             prev = () => {
                 let sliderSection = document.querySelectorAll(".sliderContainer__section");
                 let sliderSectionLast = sliderSection[sliderSection.length - 1];
                 slider.style.marginLeft = "0";
-                slider.style.transition = "all 1s";
+                slider.style.transition = "all 0.75s";
                 setTimeout(() => {
                     slider.style.transition = "none";
                     slider.insertAdjacentElement("afterbegin", sliderSectionLast);
                     slider.style.marginLeft = "-100%";
-                }, 1000)
+                }, 750)
             };
 
         btnR.addEventListener("click", () => { next() });

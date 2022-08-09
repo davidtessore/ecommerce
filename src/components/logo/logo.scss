@@ -1,0 +1,11 @@
+.logo {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    justify-items: center;
+
+    &__img {
+        width: 100%;
+    }
+
+}

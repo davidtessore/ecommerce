@@ -1,13 +1,14 @@
 import "./styles/style.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import productList from "./utils/ProductsMock";
 import NavContainer from "./components/navContainer/NavContainer";
 import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
 import Error404 from "./pages/404/Error404";
 import Home from "./pages/home/Home";
-import Productos from "./pages/productos/Productos";
-import Servicios from "./pages/servicios/Servicios";
-import Contacto from "./pages/contacto/Contacto";
-import Registro from "./pages/registro/Registro";
+import Products from "./pages/products/Products";
+import Services from "./pages/services/Services";
+import Contact from "./pages/contact/Contact";
+import Registration from "./pages/registration/Registration";
 
 const App = () => {
   return (
@@ -16,11 +17,11 @@ const App = () => {
         <NavContainer />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/servicios" element={<Servicios />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/registro" element={<Registro />} />
-          <Route path="/:category/:id" element={<ItemDetailContainer />} />
+          <Route path="/productos" element={<Products data={productList} />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/registro" element={<Registration />} />
+          <Route path="/:category/:id" element={<ItemDetailContainer data={productList} />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>

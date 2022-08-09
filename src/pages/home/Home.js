@@ -1,10 +1,9 @@
 import "./home.scss";
-import CardContainer from "../../components/cardContainer/CardContainer"
 
 const Home = () => {
     return (
-        <CardContainer />
+        <h1>Inicio</h1>
     );
 };
 
-export default Home;
+export default Home; 

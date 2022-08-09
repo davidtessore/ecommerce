@@ -1,4 +1,5 @@
 import "./navBar.scss";
+import Logo from "../logo/Logo";
 import NavMenu from "../navMenu/NavMenu";
 import Seeker from "../seeker/Seeker";
 import CartWidget from "../cartWidget/CartWidget";
@@ -7,8 +8,7 @@ const NavBar = () => {
     return (
         <nav className="nav">
             <div className="nav__container">
-                <img className="nav__img" src="/assets/ico/logo.png" alt="logo" />
-                <h1 className="nav__title">Technology Center</h1>
+                <Logo />
             </div>
             <div className="nav__container2">
                 <NavMenu />

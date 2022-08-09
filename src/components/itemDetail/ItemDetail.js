@@ -1,11 +1,11 @@
 import "./itemDetail.scss";
 import Gallery from "../gallery/Gallery";
 import SliderContainer from "../slider/SliderContainer";
+import Description from "../description/Description";
 import ItemCount from "../itemCount/ItemCount";
 
 const ItemDetail = ({ data }) => {
-
-    const { title, description, operatingSistem, processor, cores, ram, storage, screen, graphics, keyboard, measures, weight, drums, price, } = data;
+    const { title } = data;
 
     return (
         <section className="itemDetail">
@@ -18,20 +18,8 @@ const ItemDetail = ({ data }) => {
                     <SliderContainer data={data} />
                 </div>
                 <div className="itemDetail__descriptionContainer">
-                    <div className="itemDetail__description">
-                        <h2 className="itemDetail__titleDescription">{title}</h2>
-                        <p className="itemDetail__itemDescription">{description}</p>
-                        <p className="itemDetail__itemDescription">{operatingSistem}</p>
-                        <p className="itemDetail__itemDescription">{processor}, {cores}</p>
-                        <p className="itemDetail__itemDescription">{ram}</p>
-                        <p className="itemDetail__itemDescription">{storage}</p>
-                        <p className="itemDetail__itemDescription">{screen}</p>
-                        <p className="itemDetail__itemDescription">{graphics}</p>
-                        <p className="itemDetail__itemDescription">{keyboard}</p>
-                        <p className="itemDetail__itemDescription">{measures}</p>
-                        <p className="itemDetail__itemDescription">{weight}</p>
-                        <p className="itemDetail__itemDescription">{drums}</p>
-                        <span className="itemDetail__priceDescription">{price}</span>
+                    <div className="itemDetail__descriptionDetail">
+                        <Description data={data} />
                     </div>
                     <div className="itemDetail__buttonContainer">
                         <ItemCount data={data} />
