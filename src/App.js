@@ -18,10 +18,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Products data={productList} />} />
+          <Route path="/:category" element={<Products data={productList} />} />
+          <Route path="/:category/:id" element={<ItemDetailContainer data={productList} />} />
           <Route path="/servicios" element={<Services />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/registro" element={<Registration />} />
-          <Route path="/:category/:id" element={<ItemDetailContainer data={productList} />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>

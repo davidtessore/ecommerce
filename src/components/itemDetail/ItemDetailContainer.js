@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import productList from "../../utils/ProductsMock";
 
-const ItemDetailContainer = ({data}) => {
+const ItemDetailContainer = () => {
     const
         [productData, setProductData] = useState([]),
         { id } = useParams(),
-        filterProduct = () => { data.find((products) => { if (products.id === id) { setProductData(products) } }) },
+        filterProduct = () => { productList.find((products) => { if (products.id === id) { setProductData(products) } }) },
         filtered = new Promise((resolve) => { resolve(filterProduct) });
 
     useEffect(() => {
