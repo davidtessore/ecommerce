@@ -1,8 +1,8 @@
-import "./cardContainer.scss";
+import "./itemListContainer.scss";
 import { useState, useEffect } from "react";
 import ItemList from "../itemList/ItemList";
 
-const CardContainer = ({ data }) => {
+const ItemListContainer = ({ data }) => {
     const
         [listProducts, setListProducts] = useState([]),
         getProducts = new Promise((resolve) => { resolve(data) });
@@ -15,10 +15,10 @@ const CardContainer = ({ data }) => {
     }, []);
 
     return (
-        <section className="cardContainer">
+        <section className="itemListContainer">
             <ItemList dataProducts={listProducts} />
         </section>
     );
 };
 
-export default CardContainer;
+export default ItemListContainer;

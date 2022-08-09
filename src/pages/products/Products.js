@@ -1,9 +1,9 @@
 import "./products.scss";
-import CardContainer from "../../components/cardContainer/CardContainer";
+import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 
 const Products = ({data}) => {
     return (
-        <CardContainer data={data} />
+        <ItemListContainer data={data} />
     );
 };
 
