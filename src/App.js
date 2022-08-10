@@ -9,6 +9,7 @@ import Products from "./pages/products/Products";
 import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact";
 import Registration from "./pages/registration/Registration";
+import CheckOut from "./pages/checkout/CheckOut";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/servicios" element={<Services />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/registro" element={<Registration />} />
+          <Route path="/cart" element={<CheckOut />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>

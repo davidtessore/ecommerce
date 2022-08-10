@@ -1,23 +1,78 @@
 .counter {
     display: grid;
     grid-template-columns: 50% 50%;
-    align-items: center;
-    width: 75%;
+    grid-template-rows: 35% 65%;
+    grid-template-areas:
+        "count stock"
+        "button button";
+    width: 80%;
+    height: 80%;
 
-    &__container {
-        display: grid;
-        grid-template-columns: 30% 40% 30%;
-        justify-items: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__img {
+    &__countContainer,
+    &__img:hover,
+    &__stockContainer,
+    &__stock,
+    &__buttonContainer,
+    &__button {
         width: 100%;
     }
 
-    &__stock {
+    &__stock,
+    &__button,
+    &__count {
+        font-weight: 500;
+        font-size: large;
+    }
+
+    &__img,
+    &__button {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    &__countContainer {
+        grid-area: count;
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    &__img {
+        width: 85%;
+    }
+
+    &__stockContainer {
+        grid-area: stock;
         display: flex;
-        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__buttonContainer {
+        grid-area: button;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__button {
+        height: 40%;
+        background-color: rgb(235, 235, 235);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        border-style: none;
+    }
+
+    &__button:hover {
+        z-index: 1;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
+    }
+
+    &__link {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
     }
 }

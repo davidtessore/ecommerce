@@ -1,21 +1,29 @@
 import "./itemCount.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount = ({ data }) => {
+const ItemCount = ({ data, setCounterSelected }) => {
     const
         { stock } = data,
         [counter, setCounter] = useState(1),
         add = () => { if (counter < stock) { setCounter(counter + 1) } },
-        take = () => { if (counter > 0) { setCounter(counter - 1) } };
+        take = () => { if (counter > 0) { setCounter(counter - 1) } },
+        onAdd = () => {setCounterSelected(counter)};
 
     return (
         <div className="counter">
-            <div className="counter__container">
-                <img className="counter__img" src="/assets/ico/menos.png" alt="Icono" onClick={take}/>
+            <div className="counter__countContainer">
+                <img className="counter__img" src="/assets/ico/menos.png" alt="Icono Menos" onClick={take} />
                 <p className="counter__count">Prod. {counter}</p>
-                <img className="counter__img" src="/assets/ico/mas.png" alt="Icono" onClick={add}/>
+                <img className="counter__img" src="/assets/ico/mas.png" alt="Icono Mas" onClick={add} />
             </div>
-            <p className="counter__stock">Stock disp. {stock}</p>
+            <div className="counter__stockContainer">
+                <p className="counter__stock">{stock} Disponibles</p>
+            </div>
+            <div className="counter__buttonContainer">
+                <button className="counter__button" onClick={onAdd}><Link className="counter__link" to={"#"}>Agregar al Carrito</Link></button>
+                <button className="counter__button"><Link className="counter__link" to={"#"}>Comprar Ahora</Link></button>
+            </div>
         </div>
     );
 };

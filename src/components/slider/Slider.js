@@ -13,6 +13,10 @@ const Slider = ({ data }) => {
         <div className="sliderContainer">
             <div id="slider" className="sliderContainer__slider">
                 <div className="sliderContainer__section">
+                    <img className="sliderContainer__img" src={`/assets/images/${img2}`} alt="Imagen Slider" />
+                    <p className="sliderContainer__paragraph"></p>
+                </div>
+                <div className="sliderContainer__section">
                     <img className="sliderContainer__img" src={`/assets/images/${img3}`} alt="Imagen Slider" />
                     <p className="sliderContainer__paragraph"></p>
                 </div>
@@ -26,10 +30,6 @@ const Slider = ({ data }) => {
                 </div>
                 <div className="sliderContainer__section">
                     <img className="sliderContainer__img" src={`/assets/images/${img1}`} alt="Imagen Slider" />
-                    <p className="sliderContainer__paragraph"></p>
-                </div>
-                <div className="sliderContainer__section">
-                    <img className="sliderContainer__img" src={`/assets/images/${img2}`} alt="Imagen Slider" />
                     <p className="sliderContainer__paragraph"></p>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Slider from "./Slider";
 
-const SliderContainer = ({data}) => {
+const SliderContainer = ({ data }) => {
     useEffect(() => {
         const
             slider = document.querySelector("#slider"),
@@ -40,10 +40,14 @@ const SliderContainer = ({data}) => {
         btnR.addEventListener("click", () => { next() });
         btnL.addEventListener("click", () => { prev() });
         //setInterval(() => { next() }, 9000);
-    });
+        return () => {
+            btnR.removeEventListener("click", () => { next() });
+            btnL.removeEventListener("click", () => { prev() });
+        };
+    }, []);
 
     return (
-        <Slider data={data}/>
+        <Slider data={data} />
     );
 };
 
