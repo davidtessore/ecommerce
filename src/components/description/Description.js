@@ -17,7 +17,7 @@ const Description = ({ data }) => {
             <p className="description__itemDescription">{measures}</p>
             <p className="description__itemDescription">{weight}</p>
             <p className="description__itemDescription">{drums}</p>
-            <span className="description__priceDescription">{price}</span>
+            <span className="description__priceDescription">Precio: ${price}</span>
         </div>
     );
 };

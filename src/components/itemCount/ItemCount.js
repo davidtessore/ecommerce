@@ -1,14 +1,19 @@
 import "./itemCount.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const ItemCount = ({ data, setCounterSelected }) => {
     const
         { stock } = data,
         [counter, setCounter] = useState(1),
+        { addProductCart } = useContext(CartContext),
         add = () => { if (counter < stock) { setCounter(counter + 1) } },
         take = () => { if (counter > 0) { setCounter(counter - 1) } },
-        onAdd = () => {setCounterSelected(counter)};
+        onAdd = () => {
+            addProductCart(data, counter);
+            setCounterSelected(counter);
+        };
 
     return (
         <div className="counter">
@@ -22,7 +27,7 @@ const ItemCount = ({ data, setCounterSelected }) => {
             </div>
             <div className="counter__buttonContainer">
                 <button className="counter__button" onClick={onAdd}><Link className="counter__link" to={"#"}>Agregar al Carrito</Link></button>
-                <button className="counter__button"><Link className="counter__link" to={"#"}>Comprar Ahora</Link></button>
+                <button className="counter__button"><Link className="counter__link" to={"/checkout"}>Comprar Ahora</Link></button>
             </div>
         </div>
     );

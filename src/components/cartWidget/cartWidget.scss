@@ -1,7 +1,31 @@
 .cart {
     grid-area: cart;
+    display: flex;
+    position: relative;
     
     &__ico {
-        width: 100%;
+        width: 50%;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    &__ico:hover {
+        width: 65%;
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    &__quantity {
+        position: absolute;
+        border: inset 1px black;
+        width: 25%;
+        border-radius: 50%;
+    }
+
+    &__item {
+        font-weight: bolder;
+        z-index: 1;
     }
 }
