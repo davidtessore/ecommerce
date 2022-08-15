@@ -9,11 +9,9 @@
         margin: 0 auto;
     }
 
+    &__priceDescription,
     &__itemDescription {
-        font-weight: bolder;
-    }
-
-    &__priceDescription {
-        font-weight: bold;
+        font-weight: 500;
+        font-size: large;
     }
 }

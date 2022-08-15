@@ -33,7 +33,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className="cart__buttonContainer">
-                                <button className="cart__button"><Link className="cart__link" to={"/checkout"}>Terminar Compra</Link></button>
+                                <button className="cart__button"><Link className="cart__link" to={"/checkout"}>Continuar Compra</Link></button>
                                 <button className="cart__button" onClick={productId}><Link className="cart__link" to={"#"}>Eliminar del Carrito</Link></button>
                             </div>
                         </div>

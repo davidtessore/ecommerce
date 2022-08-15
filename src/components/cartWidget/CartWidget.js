@@ -7,11 +7,11 @@ const CartWidget = () => {
     const { quantityProduct } = useContext(CartContext);
 
     return (
-        <div className="cart">
-            <div className="cart__quantity">
-                <span className="cart__item">{quantityProduct}</span>
+        <div className="cartWidget">
+            <div className="cartWidget__quantity">
+                <span className="cartWidget__item">{quantityProduct}</span>
             </div>
-            <Link className="cart__link" to={"/cart"}><img className="cart__ico" src="/assets/ico/carrito.png" alt="logo carrito" /></Link>
+            <Link className="cartWidget__link" to={"/cart"}><img className="cartWidget__ico" src="/assets/ico/carrito.png" alt="logo carrito" /></Link>
         </div>
     );
 };
