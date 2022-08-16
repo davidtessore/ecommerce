@@ -21,6 +21,11 @@
         align-items: center;
         height: 100%;
     }
+
+    &__container3 {
+        grid-area: cart;
+        height: 100%;
+    }
 }
 
 .nav:hover {
