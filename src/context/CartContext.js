@@ -9,13 +9,14 @@ const
             addProductCart = (product, counter) => {
                 if (cartProduct.find(item => item.id === product.id)) {
                     product.quantity += counter;
-                } else {
+                }
+                else {
                     product.quantity = counter;
-                    setCartProduct([...cartProduct, product]);
                     setQuantityProduct(cartProduct.length + 1);
+                    setCartProduct([...cartProduct, product])
                 }
             },
-            removeItem = (id) => {
+            removeProduct = (id) => {
                 setCartProduct(cartProduct.filter(product => product.id !== id))
                 setQuantityProduct(cartProduct.length - 1)
             },
@@ -27,7 +28,7 @@ const
                 cartProduct,
                 quantityProduct,
                 addProductCart,
-                removeItem,
+                removeProduct,
                 clearCart,
             };
 

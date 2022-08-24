@@ -1,7 +1,6 @@
 import "./styles/style.scss";
 import CartProvider from "./context/CartContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import productList from "./utils/ProductsMock";
 import NavContainer from "./components/navContainer/NavContainer";
 import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
 import Error404 from "./pages/404/Error404";
@@ -21,9 +20,9 @@ const App = () => {
           <NavContainer />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/productos" element={<Products data={productList} />} />
-            <Route path="/:category" element={<Products data={productList} />} />
-            <Route path="/:category/:id" element={<ItemDetailContainer data={productList} />} />
+            <Route path="/productos" element={<Products />} />
+            <Route path="/:category" element={<Products />} />
+            <Route path="/:category/:id" element={<ItemDetailContainer />} />
             <Route path="/servicios" element={<Services />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/registro" element={<Registration />} />

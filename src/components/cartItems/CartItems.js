@@ -4,14 +4,14 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartItems = () => {
-    const { cartProduct, removeItem } = useContext(CartContext);
+    const { cartProduct, removeProduct } = useContext(CartContext);
 
     return (
         <>
             {
                 cartProduct.map((product) => {
                     const productId = () => {
-                        removeItem(product.id);
+                        removeProduct(product.id);
                     }
 
                     return (

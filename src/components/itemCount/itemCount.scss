@@ -9,7 +9,6 @@
     height: 80%;
 
     &__countContainer,
-    &__img:hover,
     &__stockContainer,
     &__stock,
     &__buttonContainer,
@@ -40,6 +39,10 @@
     }
 
     &__img {
+        width: 70%;
+    }
+
+    &__img:hover {
         width: 85%;
     }
 

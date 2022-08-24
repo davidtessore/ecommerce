@@ -40,6 +40,7 @@ const SliderContainer = ({ data }) => {
         btnR.addEventListener("click", () => { next() });
         btnL.addEventListener("click", () => { prev() });
         //setInterval(() => { next() }, 9000);
+        
         return () => {
             btnR.removeEventListener("click", () => { next() });
             btnL.removeEventListener("click", () => { prev() });
