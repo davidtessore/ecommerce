@@ -6,6 +6,7 @@ const
         const
             [cartProduct, setCartProduct] = useState([]),
             [quantityProduct, setQuantityProduct] = useState(0),
+            [totalPrice, setTotalPrice] = useState(0),
             addProductCart = (product, counter) => {
                 if (cartProduct.find(item => item.id === product.id)) {
                     product.quantity += counter;
@@ -15,6 +16,7 @@ const
                     setQuantityProduct(cartProduct.length + 1);
                     setCartProduct([...cartProduct, product])
                 }
+                setTotalPrice(totalPrice + product.price * product.quantity)
             },
             removeProduct = (id) => {
                 setCartProduct(cartProduct.filter(product => product.id !== id))
@@ -27,6 +29,7 @@ const
             data = {
                 cartProduct,
                 quantityProduct,
+                totalPrice,
                 addProductCart,
                 removeProduct,
                 clearCart,

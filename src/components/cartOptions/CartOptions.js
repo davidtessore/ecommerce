@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 
 const CartOptions = () => {
     const
-        { clearCart } = useContext(CartContext),
-        { quantityProduct } = useContext(CartContext),
+        { totalPrice, clearCart, quantityProduct } = useContext(CartContext),
         condition = quantityProduct > 1;
 
     return (
         <div className="cartOptions">
-            <h2 className="cartOptions__price">Total en el Carrito: $</h2>
+            <h2 className="cartOptions__price">Total en el Carrito: ${totalPrice}</h2>
             <button className="cartOptions__button"><Link className="cartOptions__link" to={"/checkout"}>{condition === true ? "Comprar Todo" : "Comprar"}</Link></button>
             <button className="cartOptions__button" onClick={clearCart}>{condition === true ? "Eliminar Todo" : "Eliminar"}</button>
         </div>
