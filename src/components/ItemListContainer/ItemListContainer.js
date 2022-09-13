@@ -19,7 +19,13 @@ const ItemListContainer = () => {
                     return product;
                 }),
                 filterCategory = productList.filter((products) => products.category === category),
-                getProduct = new Promise((resolve) => { if (category) { resolve(filterCategory) } else { resolve(productList) } });
+                getProduct = new Promise((resolve) => {
+                    if (category) {
+                        resolve(filterCategory)
+                    } else {
+                        resolve(productList)
+                    }
+                });
 
             return getProduct;
         };

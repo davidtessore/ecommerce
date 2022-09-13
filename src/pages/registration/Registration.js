@@ -1,8 +1,11 @@
 import "./registration.scss";
+import FormUser from "../../components/forms/FormUser";
 
 const Registration = () => {
     return (
-        <h1>Registro</h1>
+        <section>
+            <FormUser />
+        </section>
     );
 };
 

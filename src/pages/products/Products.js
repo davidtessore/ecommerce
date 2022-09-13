@@ -1,9 +1,9 @@
 import "./products.scss";
 import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 
-const Products = ({data}) => {
+const Products = () => {
     return (
-        <ItemListContainer data={data} />
+        <ItemListContainer />
     );
 };
 

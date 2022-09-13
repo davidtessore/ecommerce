@@ -13,7 +13,7 @@ const ProductCard = ({ data }) => {
             </Link>
             <div className="card__contentContainer">
                 <h3 className="card__title">{title}</h3>
-                <span className="card__price">{price}</span>
+                <span className="card__price">${price}</span>
             </div>
         </div>
     );
