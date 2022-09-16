@@ -1,13 +1,7 @@
 import "./slider.scss";
 
 const Slider = ({ data }) => {
-    const {
-        img1,
-        img2,
-        img3,
-        img4,
-        img5,
-    } = data;
+    const { img1, img2, img3, img4, img5 } = data;
 
     return (
         <div className="sliderContainer">

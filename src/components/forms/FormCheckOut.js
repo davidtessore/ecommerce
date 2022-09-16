@@ -4,7 +4,7 @@ import { UserContext } from "../../context/UserContext";
 
 const FormCheckOut = () => {
     const
-        { formData, change, sendFormData } = useContext(UserContext);
+        { formData, change, sendFormData, succesData } = useContext(UserContext);
 
     return (
         <div>

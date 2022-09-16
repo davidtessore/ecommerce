@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { CartContext } from "./CartContext";
-import { collection, addDoc } from "firebase/firestore";
+import { useLocalStorage } from "./custom/useLocalStorage";
+import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 import dataBase from "../utils/firebaseConfig";
 
 const
@@ -8,38 +9,46 @@ const
     UserProvider = ({ children }) => {
         const
             { cartProduct, totalPrice } = useContext(CartContext),
-            [succesUser, setSuccesUser] = useState([]),
-            [succesData, setSuccesData] = useState(),
-            [formUser, setFormUser] = useState({ name: "", phone: "", user: "", mail: "", password: "", confirmPassword: "" }),
-            [formLocation, setFormLocation] = useState({ province: "", city: "", direction: "", postalCode: "" }),
+            localUser = JSON.parse(localStorage.getItem("UserId")) || false,
+            [succesUser, setSuccesUser] = useLocalStorage("UserId"),
+            [formUser, setFormUser] = useState({ name: "", phone: "", user: "", mail: "", password: "", confirmPassword: "", province: "", city: "", direction: "", postalCode: "" }),
+            [userData, setUserData] = useState([]),
             [formData, setFormData] = useState({ user: "", phone: "", email: "" }),
+            [succesData, setSuccesData] = useState(),
             [orderData, setOrderData] = useState({
                 items: cartProduct.map((product) => {
                     return {
                         id: product.id,
                         title: product.title,
                         quantity: product.quantity,
-                        price: product.price * product.quantity,
+                        price: product.price * product.quantity
                     }
                 }),
                 buyer: {},
                 date: new Date().toLocaleString(),
-                total: totalPrice,
+                total: totalPrice
             }),
+            currentUser = localUser.find((user) => { return user }),
             userFormulary = (e) => { setFormUser({ ...formUser, [e.target.name]: e.target.value }) },
-            locationFormulary = (e) => { setFormLocation({ ...formLocation, [e.target.name]: e.target.value }) },
-            sendLocal = (data) => {
-                localStorage.setItem("UserId", JSON.stringify(data));
-            },
-            sendUser = (data) => {
-                succesUser.push(setSuccesUser([...succesUser, data]));
-                sendLocal(succesUser);
-            },
             pushUser = async (user) => {
                 const
                     collectionUser = collection(dataBase, "usuario"),
                     userDoc = await addDoc(collectionUser, user);
-                sendUser(userDoc.id)
+                setSuccesUser([...succesUser, userDoc.id]);
+            },
+            sendFormUser = (e) => {
+                e.preventDefault();
+                pushUser(formUser);
+            },
+            getUser = async () => {
+                const
+                    docRef = doc(dataBase, "usuario", currentUser),
+                    docSnapshot = await getDoc(docRef);
+
+                let user = docSnapshot.data();
+                user.id = docSnapshot.id;
+
+                return user
             },
             pushData = async (order) => {
                 const
@@ -47,27 +56,23 @@ const
                     orderDoc = await addDoc(collectionOrder, order);
                 setSuccesData(orderDoc.id);
             },
-            change = (e) => {
-                setFormData({ ...formData, [e.target.name]: e.target.value });
-            },
-            sendFormUser = (e) => {
-                e.preventDefault();
-                pushUser({ user: formUser, location: formLocation });
-            },
+            change = (e) => { setFormData({ ...formData, [e.target.name]: e.target.value }) },
             sendFormData = (e) => {
                 e.preventDefault();
                 pushData({ ...orderData, buyer: formData });
             },
             data = {
                 formUser,
-                formLocation,
+                localUser,
                 formData,
+                userData,
+                succesData,
+                setUserData,
+                getUser,
                 userFormulary,
-                locationFormulary,
                 change,
                 sendFormUser,
                 sendFormData,
-                succesData,
             };
 
         return (
