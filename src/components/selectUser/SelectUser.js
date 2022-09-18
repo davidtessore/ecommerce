@@ -1,25 +1,46 @@
 import "./selectUser.scss";
-import { useContext, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../context/UserContext";
 
 const SelectUser = () => {
     const
-        { userData, setUserData, getUser, localUser } = useContext(UserContext),
-        { name, user } = userData;
+        { localUser, getUser } = useContext(UserContext),
+        [userData, setUserData] = useState([]),
+        { name, user, phone, mail, password, province, city, direction, postalCode } = userData;
 
     useEffect(() => {
         getUser()
             .then((res) => { setUserData(res) })
-            .catch(() => { })
+            .catch((e) => {
+                e = "Su conexion a Internet a Fallado o No existe Usuario";
+                console.error(e)
+            })
             .finally(() => { })
     }, [localUser]);
-    
+
     return (
-        <div>
-            <h1>seleccione usuario</h1>
-            <p>nombre: {name}</p>
-            <p>usuario: {user}</p>
-        </div>
+        <section className="selectUser">
+            <h1 className="selectUser__principalTitle">Información de Usuario</h1>
+            <div className="selectUser__containerUser">
+                <h2 className="selectUser__title">Datos Usuario</h2>
+                <p className="selectUser__data">Nombre: {name}</p>
+                <p className="selectUser__data">Usuario: {user}</p>
+                <p className="selectUser__data">Telefono: {phone}</p>
+                <p className="selectUser__data">Correo: {mail}</p>
+                <p className="selectUser__data">Contraseña: {password}</p>
+            </div>
+            <div className="selectUser__containerLocation">
+                <h2 className="selectUser__title">Datos Ubicación</h2>
+                <p className="selectUser__data">Provincia: {province}</p>
+                <p className="selectUser__data">Ciudad: {city}</p>
+                <p className="selectUser__data">Dirección: {direction}</p>
+                <p className="selectUser__data">Código Postal: {postalCode}</p>
+            </div>
+            <div className="selectUser__containerId">
+                <h2 className="selectUser__title">ID de Usuario</h2>
+                <p className="selectUser__data">Identificador: {localUser}</p>
+            </div>
+        </section>
     );
 };
 

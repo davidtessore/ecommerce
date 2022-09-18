@@ -1,4 +1,4 @@
-import "./forms.scss";
+import "./form.scss";
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
@@ -8,7 +8,7 @@ const FormUser = () => {
         [currentForm, setCurrentForm] = useState(false),
         [messajePassword, setMessajePassword] = useState("Nueva Contraseña:"),
         [messajePassword2, setMessajePassword2] = useState("Confirme Contraseña:"),
-        [formulary, setFormulary] = useState("formulary__label"),
+        [formulary, setFormulary] = useState("form__label"),
         check = (e) => {
             e.preventDefault();
             if (formUser.password === formUser.confirmPassword) {
@@ -17,36 +17,36 @@ const FormUser = () => {
             else {
                 setMessajePassword("Las Contraseñas Ingresadas No Coinciden. Ingrese Nueva Contraseña");
                 setMessajePassword2("Reingrese Nueva Contraseña");
-                setFormulary("formulary__error");
+                setFormulary("form__error");
             }
         };
 
     return (
-        <div className="formulary">{
+        <section className="form">{
             currentForm === false
-                ? <div className="formulary__container">
-                    <h1 className="formulary__title">Ingrese sus datos Personales</h1>
-                    <form className="formulary__forms" onSubmit={check}>
-                        <label className="formulary__label">Nombre Completo:<br /><input className="formulary__input" type="text" name="name" value={formUser.name} placeholder="Nombre y Apellido" onChange={userFormulary} /></label>
-                        <label className="formulary__label">Telefono:<br /><input className="formulary__input" type="number" name="phone" value={formUser.phone} placeholder="Telefono" onChange={userFormulary} /></label>
-                        <label className="formulary__label">Nuevo Usuario:<br /><input className="formulary__input" type="text" name="user" value={formUser.user} placeholder="Nombre Usuario" onChange={userFormulary} /></label>
-                        <label className="formulary__label">E-mail:<br /><input className="formulary__input" type="mail" name="mail" value={formUser.mail} placeholder="E-mail" onChange={userFormulary} /></label>
-                        <label className={formulary}>{messajePassword}<br /><input className="formulary__input" type="password" name="password" value={formUser.password} placeholder="Contraseña" onChange={userFormulary} /></label>
-                        <label className={formulary}>{messajePassword2}<br /><input className="formulary__input" type="password" name="confirmPassword" value={formUser.confirmPassword} placeholder="Confirmar Contraseña" onChange={userFormulary} /></label>
-                        <button className="formulary__button" type="submit">Continuar</button>
+                ? <div className="form__container">
+                    <h2 className="form__title">Ingrese sus datos Personales</h2>
+                    <form className="form__forms" onSubmit={check}>
+                        <label className="form__label">Nombre Completo:<br /><input className="form__input" type="text" name="name" value={formUser.name} placeholder=" Nombre y Apellido" onChange={userFormulary} required /></label>
+                        <label className="form__label">Telefono:<br /><input className="form__input" type="number" name="phone" value={formUser.phone} placeholder=" Telefono" onChange={userFormulary} required /></label>
+                        <label className="form__label">Nuevo Usuario:<br /><input className="form__input" type="text" name="user" value={formUser.user} placeholder=" Nombre Usuario" onChange={userFormulary} required /></label>
+                        <label className="form__label">E-mail:<br /><input className="form__input" type="mail" name="mail" value={formUser.mail} placeholder=" E-mail" onChange={userFormulary} required /></label>
+                        <label className={formulary}>{messajePassword}<br /><input className="form__input" type="password" name="password" value={formUser.password} placeholder=" Contraseña" onChange={userFormulary} required /></label>
+                        <label className={formulary}>{messajePassword2}<br /><input className="form__input" type="password" name="confirmPassword" value={formUser.confirmPassword} placeholder=" Confirmar Contraseña" onChange={userFormulary} required /></label>
+                        <button className="form__button" type="submit">Continuar</button>
                     </form>
                 </div>
-                : <div className="formulary__container">
-                    <h1 className="formulary__title">Ingrese los datos de Región y Dirección</h1>
-                    <form className="formulary__forms" onSubmit={sendFormUser}>
-                        <label className="formulary__label">Provincia:<br /><input className="formulary__input" type="text" name="province" value={formUser.province} placeholder="Provincia" onChange={userFormulary} /></label>
-                        <label className="formulary__label">Ciudad:<br /><input className="formulary__input" type="text" name="city" value={formUser.city} placeholder="Ciudad" onChange={userFormulary} /></label>
-                        <label className="formulary__label">Direccion:<br /><input className="formulary__input" type="text" name="direction" value={formUser.direction} placeholder="Direccion" onChange={userFormulary} /></label>
-                        <label className="formulary__label">Codigo Postal:<br /><input className="formulary__input" type="number" name="postalCode" value={formUser.postalCode} placeholder="Codigo Postal" onChange={userFormulary} /></label>
-                        <button className="formulary__button" type="submit">Guardar</button>
+                : <div className="form__container">
+                    <h2 className="form__title">Ingrese los datos de Región y Dirección</h2>
+                    <form className="form__forms" onSubmit={sendFormUser}>
+                        <label className="form__label">Provincia:<br /><input className="form__input" type="text" name="province" value={formUser.province} placeholder=" Provincia" onChange={userFormulary} required /></label>
+                        <label className="form__label">Ciudad:<br /><input className="form__input" type="text" name="city" value={formUser.city} placeholder=" Ciudad" onChange={userFormulary} required /></label>
+                        <label className="form__label">Direccion:<br /><input className="form__input" type="text" name="direction" value={formUser.direction} placeholder=" Direccion" onChange={userFormulary} required /></label>
+                        <label className="form__label">Codigo Postal:<br /><input className="form__input" type="number" name="postalCode" value={formUser.postalCode} placeholder=" Codigo Postal" onChange={userFormulary} required /></label>
+                        <button className="form__button" type="submit">Guardar</button>
                     </form>
                 </div>
-        }</div>
+        }</section>
     );
 };
 

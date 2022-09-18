@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { CartContext } from "./CartContext";
-import { useLocalStorage } from "./custom/useLocalStorage";
+import { useStorage } from "./custom/useStorage";
 import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 import dataBase from "../utils/firebaseConfig";
 
@@ -10,9 +10,8 @@ const
         const
             { cartProduct, totalPrice } = useContext(CartContext),
             localUser = JSON.parse(localStorage.getItem("UserId")) || false,
-            [succesUser, setSuccesUser] = useLocalStorage("UserId"),
+            [succesUser, setSuccesUser] = useStorage(localStorage, "UserId"),
             [formUser, setFormUser] = useState({ name: "", phone: "", user: "", mail: "", password: "", confirmPassword: "", province: "", city: "", direction: "", postalCode: "" }),
-            [userData, setUserData] = useState([]),
             [formData, setFormData] = useState({ user: "", phone: "", email: "" }),
             [succesData, setSuccesData] = useState(),
             [orderData, setOrderData] = useState({
@@ -28,7 +27,6 @@ const
                 date: new Date().toLocaleString(),
                 total: totalPrice
             }),
-            currentUser = localUser.find((user) => { return user }),
             userFormulary = (e) => { setFormUser({ ...formUser, [e.target.name]: e.target.value }) },
             pushUser = async (user) => {
                 const
@@ -40,21 +38,25 @@ const
                 e.preventDefault();
                 pushUser(formUser);
             },
-            getUser = async () => {
-                const
-                    docRef = doc(dataBase, "usuario", currentUser),
-                    docSnapshot = await getDoc(docRef);
-
-                let user = docSnapshot.data();
-                user.id = docSnapshot.id;
-
-                return user
-            },
             pushData = async (order) => {
                 const
                     collectionOrder = collection(dataBase, "ordenes"),
                     orderDoc = await addDoc(collectionOrder, order);
                 setSuccesData(orderDoc.id);
+            },
+            currentUser = (data) => {
+                if (data) { for (let users of data) { return users } }
+                else { return false }
+            },
+            getUser = async () => {
+                const
+                    docRef = doc(dataBase, "usuario", currentUser(localUser)),
+                    docSnapshot = await getDoc(docRef);
+    
+                let user = docSnapshot.data();
+                user.id = docSnapshot.id;
+    
+                return user
             },
             change = (e) => { setFormData({ ...formData, [e.target.name]: e.target.value }) },
             sendFormData = (e) => {
@@ -65,12 +67,10 @@ const
                 formUser,
                 localUser,
                 formData,
-                userData,
                 succesData,
-                setUserData,
-                getUser,
                 userFormulary,
                 change,
+                getUser,
                 sendFormUser,
                 sendFormData,
             };

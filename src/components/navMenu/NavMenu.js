@@ -1,7 +1,26 @@
 import "./navMenu.scss";
 import { Link } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const NavMenu = () => {
+    const
+        { localUser } = useContext(UserContext),
+        [currentUser, setCurrentUser] = useState("");
+
+    useEffect(() => {
+        try {
+            if (localUser === false) {
+                setCurrentUser("Regístrate")
+            } else {
+                setCurrentUser("Mi Perfil")
+            }
+        } catch (error) {
+            error = "No se pudo cargar el nuevo Usuario";
+            console.error(error)
+        }
+    }, [localUser]);
+
     return (
         <ul className="menu">
             <li className="menu__item"><Link className="menu__link" to="/">Inicio</Link></li>
@@ -16,7 +35,7 @@ const NavMenu = () => {
             </li>
             <li className="menu__item"><Link className="menu__link" to="/servicios">Servicios</Link></li>
             <li className="menu__item"><Link className="menu__link" to="/contacto">Contacto</Link></li>
-            <li className="menu__item"><Link className="menu__link" to="/registro">Registrate</Link></li>
+            <li className="menu__item"><Link className="menu__link" to="/registro">{currentUser}</Link></li>
         </ul>
     );
 };

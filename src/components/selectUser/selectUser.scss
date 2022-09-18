@@ -1,0 +1,65 @@
+.selectUser {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "title title title"
+        "usuario ubicacion id";
+    column-gap: 1%;
+    width: 100%;
+
+    &__containerUser,
+    &__containerLocation,
+    &__containerId {
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(235, 235, 235);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    &__containerUser:hover,
+    &__containerLocation:hover,
+    &__containerId:hover {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
+    }
+
+    &__principalTitle {
+        grid-area: title;
+        text-align: center;
+        padding: 1% 0;
+    }
+
+    &__containerUser {
+        grid-area: usuario;
+    }
+
+    &__containerLocation {
+        grid-area: ubicacion;
+    }
+
+    &__containerId {
+        grid-area: id;
+    }
+
+    &__title {
+        text-align: center;
+        padding: 3%;
+    }
+
+    &__data {
+        padding: 1% 1% 2% 3%;
+        font-weight: 500;
+        font-size: initial;
+        color: rgb(100, 100, 100);
+        transition: 0.3s;
+    }
+
+    &__data:hover {
+        padding: 1% 1% 2% 10%;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+    }
+}
