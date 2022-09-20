@@ -27,12 +27,12 @@ const ItemDetail = ({ data }) => {
                     </div>
                     <div className="itemDetail__counterContainer">
                         {
-                            counterSelected > 0 ?
-                                <div className="itemDetail__buttonContainer">
+                            counterSelected > 0
+                                ? <div className="itemDetail__buttonContainer">
                                     <button className="itemDetail__button"><Link className="counter__link" to={"/checkout"}>Terminar Compra</Link></button>
                                     <button className="itemDetail__button"><Link className="counter__link" to={"/cart"}>Ir al Carrito</Link></button>
-                                </div> :
-                                <ItemCount data={data} setCounterSelected={setCounterSelected} />
+                                </div>
+                                : <ItemCount data={data} setCounterSelected={setCounterSelected} />
                         }
                     </div>
                 </div>

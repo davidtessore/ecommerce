@@ -4,23 +4,24 @@ import { UserContext } from "../../context/UserContext";
 
 const SelectUser = () => {
     const
-        { localUser, getUser } = useContext(UserContext),
+        indexCollection = "usuario",
+        { localUser, getDataCollection } = useContext(UserContext),
         [userData, setUserData] = useState([]),
         { name, user, phone, mail, password, province, city, direction, postalCode } = userData;
 
     useEffect(() => {
-        getUser()
+        getDataCollection(indexCollection, localUser)
             .then((res) => { setUserData(res) })
             .catch((e) => {
-                e = "Su conexion a Internet a Fallado o No existe Usuario";
+                e = `Su conexion a Internet a Fallado o No existe ${indexCollection}`;
                 console.error(e)
             })
             .finally(() => { })
-    }, [localUser]);
+    }, []);
 
     return (
         <section className="selectUser">
-            <h1 className="selectUser__principalTitle">Información de Usuario</h1>
+            <h1 className="selectUser__principalTitle">Mis Datos</h1>
             <div className="selectUser__containerUser">
                 <h2 className="selectUser__title">Datos Usuario</h2>
                 <p className="selectUser__data">Nombre: {name}</p>

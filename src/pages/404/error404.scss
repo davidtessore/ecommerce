@@ -1,0 +1,31 @@
+.error404 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__containerImg {
+        position: absolute;
+        width: 50%;
+    }
+
+    &__img {
+        position: absolute;
+        width: 100%;
+    }
+
+    &__containerTitle {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+}
