@@ -1,0 +1,38 @@
+.currentPurchases {
+    display: flex;
+    flex-direction: column;
+
+    &__userContainer,
+    &__locationContainer {
+        width: 50%;
+    }
+
+    &__buyerContainer {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    &__itemsContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__imgContainer {
+        width: 25%;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__characteristicContainer {
+        width: 50%;
+    }
+
+    &__paragraph {
+        font-size: initial;
+        font-weight: 500;
+    }
+}

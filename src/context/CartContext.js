@@ -10,21 +10,20 @@ const
             addProductCart = (product, counter) => {
                 if (cartProduct.find(item => item.id === product.id)) {
                     product.quantity += counter;
-                }
-                else {
+                } else {
                     product.quantity = counter;
                     setQuantityProduct(cartProduct.length + 1);
-                    setCartProduct([...cartProduct, product])
-                }
-                setTotalPrice(totalPrice + product.price * product.quantity)
+                    setCartProduct([...cartProduct, product]);
+                };
+                setTotalPrice(totalPrice + product.price * product.quantity);
             },
             removeProduct = (id) => {
-                setCartProduct(cartProduct.filter(product => product.id !== id))
-                setQuantityProduct(cartProduct.length - 1)
+                setCartProduct(cartProduct.filter(product => product.id !== id));
+                setQuantityProduct(cartProduct.length - 1);
             },
             clearCart = () => {
                 setCartProduct([]);
-                setQuantityProduct(0)
+                setQuantityProduct(0);
             },
             data = {
                 cartProduct,

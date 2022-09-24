@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const
         [listProducts, setListProducts] = useState([]),
         { category } = useParams(),
-        getProducts = async () => {
+        getProductsCollection = async () => {
             const
                 productCollection = collection(dataBase, "productos"),
                 productSnapshot = await getDocs(productCollection),
@@ -31,7 +31,7 @@ const ItemListContainer = () => {
         };
 
     useEffect(() => {
-        getProducts()
+        getProductsCollection()
             .then((res) => { setListProducts(res) })
             .catch(() => { })
             .finally(() => { })

@@ -4,16 +4,15 @@ import { UserContext } from "../../context/UserContext";
 
 const SelectUser = () => {
     const
-        indexCollection = "usuario",
         { localUser, getDataCollection } = useContext(UserContext),
         [userData, setUserData] = useState([]),
         { name, user, phone, mail, password, province, city, direction, postalCode } = userData;
 
     useEffect(() => {
-        getDataCollection(indexCollection, localUser)
+        getDataCollection("usuario", localUser)
             .then((res) => { setUserData(res) })
             .catch((e) => {
-                e = `Su conexion a Internet a Fallado o No existe ${indexCollection}`;
+                e = "Su conexion a Internet a Fallado o No existe el usuario";
                 console.error(e)
             })
             .finally(() => { })

@@ -12,8 +12,7 @@ const CartContainer = () => {
 
     return (
         <section className="cartContainer">
-            <h1 className="cartContainer__title">{condition === true ? "Productos en el Carrito" : "El Carrito está Vacio"}</h1>
-            {
+            <h1 className="cartContainer__title">{condition === true ? "Productos en el Carrito" : "El Carrito está Vacio"}</h1>{
                 quantityProduct > 0
                     ? <>
                         <CartItems />
@@ -25,8 +24,7 @@ const CartContainer = () => {
                             <button className="cartContainer__button"><Link className="cartContainer__link" to={"/"}>Ir al Inicio</Link></button>
                         </div>
                     </>
-            }
-        </section>
+            }</section>
     );
 };
 

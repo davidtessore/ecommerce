@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from "./context/CartContext";
 import UserProvider from "./context/UserContext";
 import NavContainer from "./components/navContainer/NavContainer";
-import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
+import ItemDetail from "./components/itemDetail/ItemDetail";
 import Error404 from "./pages/404/Error404";
 import Home from "./pages/home/Home";
 import Products from "./pages/products/Products";
@@ -24,7 +24,7 @@ const App = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/productos" element={<Products />} />
                             <Route path="/:category" element={<Products />} />
-                            <Route path="/:category/:id" element={<ItemDetailContainer />} />
+                            <Route path="/:category/:id" element={<ItemDetail />} />
                             <Route path="/servicios" element={<Services />} />
                             <Route path="/contacto" element={<Contact />} />
                             <Route path="/registro" element={<Registration />} />

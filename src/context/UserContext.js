@@ -31,10 +31,10 @@ const
                     docRef = doc(dataBase, indexCollection, currentData(data)),
                     docSnapshot = await getDoc(docRef);
 
-                let user = docSnapshot.data();
-                user.id = docSnapshot.id;
+                let product = docSnapshot.data();
+                product.id = docSnapshot.id;
 
-                return user
+                return product
             },
             data = {
                 formUser,
