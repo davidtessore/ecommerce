@@ -10,13 +10,7 @@
         grid-template-columns: 100%;
         row-gap: 10px;
         width: 25%;
-        padding: 1%;
-    }
-
-    &__button,
-    &__link {
-        font-weight: 500;
-        font-size: 1.15vw;
+        padding: 15px;
     }
 
     &__button {
@@ -30,13 +24,14 @@
     }
 
     &__button:hover {
-        z-index: 1;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(255, 0, 0);
         box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
     }
 
     &__link {
         text-decoration: none;
         color: rgb(0, 0, 0);
+        font-weight: 500;
+        font-size: large;
     }
 }

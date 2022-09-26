@@ -8,10 +8,10 @@ const CurrentItems = ({ data }) => {
             <div className="currentPurchases__imgContainer">
                 <img className="currentPurchases__img" src={`/assets/images/${img}`} alt="Imagen de producto" />
             </div>
+            <h3 className="currentPurchases__title">Detalles de Producto:</h3>
             <div className="currentPurchases__characteristicContainer">
-                <h3 className="currentPurchases__title">Caracteristicas:</h3>
                 <p className="currentPurchases__paragraph">producto: {title}</p>
-                <p className="currentPurchases__paragraph">precio: {price}</p>
+                <p className="currentPurchases__paragraph">precio: ${price}</p>
                 <p className="currentPurchases__paragraph">ID producto: {id}</p>
                 <p className="currentPurchases__paragraph">cantidad: {quantity}</p>
             </div>

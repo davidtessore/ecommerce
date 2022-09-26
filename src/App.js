@@ -1,6 +1,7 @@
 import "./styles/style.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from "./context/CartContext";
+import ReturnsProvider from "./context/ReturnsContext";
 import UserProvider from "./context/UserContext";
 import NavContainer from "./components/navContainer/NavContainer";
 import ItemDetail from "./components/itemDetail/ItemDetail";
@@ -16,25 +17,27 @@ import CheckOut from "./pages/checkout/CheckOut";
 const App = () => {
     return (
         <BrowserRouter>
-            <CartProvider>
-                <UserProvider>
-                    <div className="App">
-                        <NavContainer />
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/productos" element={<Products />} />
-                            <Route path="/:category" element={<Products />} />
-                            <Route path="/:category/:id" element={<ItemDetail />} />
-                            <Route path="/servicios" element={<Services />} />
-                            <Route path="/contacto" element={<Contact />} />
-                            <Route path="/registro" element={<Registration />} />
-                            <Route path="/cart" element={<Cart />} />
-                            <Route path="/checkout" element={<CheckOut />} />
-                            <Route path="*" element={<Error404 />} />
-                        </Routes>
-                    </div>
-                </UserProvider>
-            </CartProvider>
+            <UserProvider>
+                <ReturnsProvider>
+                    <CartProvider>
+                        <div className="App">
+                            <NavContainer />
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/productos" element={<Products />} />
+                                <Route path="/:category" element={<Products />} />
+                                <Route path="/:category/:id" element={<ItemDetail />} />
+                                <Route path="/servicios" element={<Services />} />
+                                <Route path="/contacto" element={<Contact />} />
+                                <Route path="/registro" element={<Registration />} />
+                                <Route path="/cart" element={<Cart />} />
+                                <Route path="/checkout" element={<CheckOut />} />
+                                <Route path="*" element={<Error404 />} />
+                            </Routes>
+                        </div>
+                    </CartProvider>
+                </ReturnsProvider>
+            </UserProvider>
         </BrowserRouter>
     );
 };

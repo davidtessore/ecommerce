@@ -1,38 +1,111 @@
 .currentPurchases {
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &__buyerContainer,
+    &__itemsContainer,
+    &__detailContainer,
+    &__buttonContainer {
+        display: flex;
+        justify-content: space-evenly;
+        width: 95%;
+    }
 
     &__userContainer,
     &__locationContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 50%;
+    }
+
+    &__characteristicContainer,
+    &__itemUserContainer,
+    &__itemLocationContainer {
         width: 50%;
     }
 
-    &__buyerContainer {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
+    &__generalTitle,
+    &__title,
+    &__titleUser,
+    &__titleLocation {
+        padding: 10px;
+        text-align: center;
+        color: rgb(100, 100, 100);
+    }
+
+    &__title,
+    &__titleUser,
+    &__titleLocation {
+        font-size: larger;
+        font-weight: 700;
+    }
+
+    &__generalTitle {
+        font-size: x-large;
+        font-weight: 700;
     }
 
     &__itemsContainer {
-        display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+        border-style: none;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: 15px 0;
+
     }
 
-    &__imgContainer {
-        width: 25%;
-    }
-
-    &__img {
-        width: 100%;
+    &__itemsContainer:hover {
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
     }
 
     &__characteristicContainer {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__generalContainer {
+        width: 95%;
+    }
+
+    &__imgContainer {
         width: 50%;
+    }
+
+    &__img {
+        width: 25%;
     }
 
     &__paragraph {
         font-size: initial;
         font-weight: 500;
+    }
+
+    &__buttonContainer {
+        padding: 15px 0;
+    }
+
+    &__button {
+        background-color: rgb(235, 235, 235);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        border-style: none;
+        transition: 0.3s;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: large;
+        padding: 10px 0;
+        width: 25%;
+    }
+
+    &__button:hover {
+        background-color: rgb(255, 0, 0);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
     }
 }

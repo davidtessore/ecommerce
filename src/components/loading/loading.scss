@@ -1,0 +1,36 @@
+.loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 80%;
+
+    &__img {
+        animation: rotation 0.75s infinite linear;
+        position: relative;
+        width: 15%;
+    }
+
+    &__img1 {
+        position: absolute;
+        width: 10%;
+    }
+
+    &__paragraph {
+        position: absolute;
+        top: 85%;
+        font-size: x-large;
+        font-weight: 500;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-359deg);
+    }
+}

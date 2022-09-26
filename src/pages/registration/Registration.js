@@ -7,13 +7,11 @@ const Registration = () => {
     const { localUser } = useContext(UserContext);
 
     return (
-        <>
-            {
-                localUser === false
-                    ? <FormUser />
-                    : <SelectUser />
-            }
-        </>
+        <>{
+            localUser === false
+                ? <FormUser />
+                : <SelectUser />
+        }</>
     );
 };
 

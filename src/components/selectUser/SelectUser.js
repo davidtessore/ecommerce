@@ -1,10 +1,12 @@
 import "./selectUser.scss";
 import { useContext, useState, useEffect } from "react";
+import { ReturnsContext } from "../../context/ReturnsContext";
 import { UserContext } from "../../context/UserContext";
 
 const SelectUser = () => {
     const
-        { localUser, getDataCollection } = useContext(UserContext),
+        { getDataCollection } = useContext(ReturnsContext),
+        { localUser } = useContext(UserContext),
         [userData, setUserData] = useState([]),
         { name, user, phone, mail, password, province, city, direction, postalCode } = userData;
 

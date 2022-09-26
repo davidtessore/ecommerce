@@ -1,7 +1,7 @@
 import "./itemDetail.scss";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
+import { ReturnsContext } from "../../context/ReturnsContext";
 import { Link } from "react-router-dom";
 import Gallery from "../gallery/Gallery";
 import SliderContainer from "../slider/SliderContainer";
@@ -11,7 +11,7 @@ import ItemCount from "../itemCount/ItemCount";
 const ItemDetail = () => {
     const
         [productData, setProductData] = useState([]),
-        { getDataCollection } = useContext(UserContext),
+        { getDataCollection } = useContext(ReturnsContext),
         [counterSelected, setCounterSelected] = useState(0),
         { id } = useParams(),
         { title } = productData;

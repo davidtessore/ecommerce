@@ -1,11 +1,12 @@
 import { useContext, useEffect } from "react";
-import { UserContext } from "../../context/UserContext";
+import { ReturnsContext } from "../../context/ReturnsContext";
 import { useStorage } from "../../context/custom/useStorage";
 import CurrentPurchases from "./CurrentPurchases";
+import Loading from "../loading/Loading";
 
 const CurrentPurchasesContainer = ({ data }) => {
     const
-        { getDataCollection } = useContext(UserContext),
+        { getDataCollection } = useContext(ReturnsContext),
         [orders, setOrders] = useStorage(sessionStorage, "Order"),
         purchases = JSON.parse(sessionStorage.getItem("Order")) || false;
 
@@ -18,7 +19,7 @@ const CurrentPurchasesContainer = ({ data }) => {
 
     return (
         purchases === false
-            ? <p>Espere</p>
+            ? <Loading />
             : <CurrentPurchases data={purchases} />
     );
 };
