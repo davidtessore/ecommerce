@@ -19,10 +19,11 @@ const NavBar = () => {
                 <Seeker />
             </div>
             {
-                quantityProduct > 0 ?
-                    <div className="nav__container3">
+                quantityProduct > 0
+                    ? <div className="nav__container3">
                         <CartWidget />
-                    </div> : ""
+                    </div>
+                    : false
             }
         </nav>
     );

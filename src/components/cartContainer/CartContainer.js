@@ -18,12 +18,10 @@ const CartContainer = () => {
                         <CartItems />
                         <CartOptions />
                     </>
-                    : <>
-                        <div className="cartContainer__buttonContainer">
-                            <button className="cartContainer__button"><Link className="cartContainer__link" to={"/productos"}>Comprar Algo</Link></button>
-                            <button className="cartContainer__button"><Link className="cartContainer__link" to={"/"}>Ir al Inicio</Link></button>
-                        </div>
-                    </>
+                    : <div className="cartContainer__buttonContainer">
+                        <button className="cartContainer__button"><Link className="cartContainer__link" to={"/productos"}>Comprar Algo</Link></button>
+                        <button className="cartContainer__button"><Link className="cartContainer__link" to={"/"}>Ir al Inicio</Link></button>
+                    </div>
             }</section>
     );
 };
