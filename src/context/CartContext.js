@@ -6,40 +6,37 @@ const
     CartProvider = ({ children }) => {
         const
             [cartProduct, setCartProduct] = useStorage(localStorage, "Cart"),
-            localOrder = JSON.parse(localStorage.getItem("Cart")) || [],
-            quantityProduct = localOrder.length,
-            totalPrice = localOrder.map(data => data.price * data.quantity).reduce((a, b) => a + b, 0),
-            //Esta funcion esta flasheando
+            quantityProduct = cartProduct.length,
+            totalPrice = cartProduct.map(data => data.price * data.quantity).reduce((a, b) => a + b, 0),
             addProductCart = (product, counter) => {
-                if (localOrder.find((item) => item.id === product.id)) {
-                    product.quantity += counter;
+                if (cartProduct.find(item => item.id === product.id)) {
+                    const localCart = JSON.parse(localStorage.getItem("Cart"))
+                    for (let i = 0; i < localCart.length; i++) {
+                        if (localCart[i].id === product.id) {
+                            product = localCart[i];
+                            product.quantity += counter
+                        }
+                        setCartProduct([...localCart])
+                    }
                 } else {
                     product.quantity = counter;
-                    setCartProduct([...localOrder, product]);
-                }
-                //if (cartProduct.find((item) => item.id === product.id)) {
-                //    product.quantity = product.quantity += counter;
-                //} else {
-                //    product.quantity = counter;
-                //    setCartProduct([...cartProduct, product]);
-                //};
+                    setCartProduct([...cartProduct, product])
+                };
             },
-            //
             removeProduct = (id) => {
                 setCartProduct(cartProduct.filter(product => product.id !== id));
             },
-            clearCart = () => {
-                setCartProduct([]);
+            clearCart = (data) => {
+                localStorage.removeItem(data);
             },
             data = {
-                localOrder,
+                cartProduct,
                 quantityProduct,
                 totalPrice,
                 addProductCart,
                 removeProduct,
                 clearCart,
             };
-            console.log(localOrder)
 
         return (
             <CartContext.Provider value={data}>

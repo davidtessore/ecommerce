@@ -27,7 +27,7 @@ const ItemCount = ({ data, setCounterSelected }) => {
             </div>
             <div className="counter__buttonContainer">
                 <button className="counter__button" onClick={onAdd}><Link className="counter__link" to={"#"}>Agregar al Carrito</Link></button>
-                <button className="counter__button"><Link className="counter__link" to={"/checkout"}>Comprar Ahora</Link></button>
+                <button className="counter__button" onClick={onAdd}><Link className="counter__link" to={"/checkout"}>Comprar Ahora</Link></button>
             </div>
         </div>
     );

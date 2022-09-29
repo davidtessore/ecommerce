@@ -1,12 +1,14 @@
 import "./form.scss";
 import { UserContext } from "../../context/UserContext";
 import { ReturnsContext } from "../../context/ReturnsContext";
+import { CartContext } from "../../context/CartContext";
 import { useContext, useState } from "react";
 
 const FormCheckOut = ({ buyerUser, orderData }) => {
     const
         { formData, change } = useContext(UserContext),
         { pushData } = useContext(ReturnsContext),
+        { clearCart } = useContext(CartContext),
         [formulary, setFormulary] = useState("form__label"),
         [messaje1, setMessaje1] = useState("Usuario:"),
         [messaje2, setMessaje2] = useState("Contraseña:"),
@@ -14,6 +16,7 @@ const FormCheckOut = ({ buyerUser, orderData }) => {
             e.preventDefault();
             if ((buyerUser.user === formData.user) && (buyerUser.password === formData.password)) {
                 pushData("ordenes", { ...orderData, buyer: buyerUser });
+                clearCart("Cart");
             } else {
                 setFormulary("form__error")
                 setMessaje1("Error, Reingrese Usuario")

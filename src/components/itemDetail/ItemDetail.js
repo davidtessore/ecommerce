@@ -16,12 +16,12 @@ const ItemDetail = () => {
         { id } = useParams(),
         { title } = productData;
 
-        useEffect(() => {
-            getDataCollection("productos", [id])
-                .then((res) => { setProductData(res) })
-                .catch(() => { })
-                .finally(() => { })
-        }, []);
+    useEffect(() => {
+        getDataCollection("productos", [id])
+            .then((res) => { setProductData(res) })
+            .catch(() => { })
+            .finally(() => { })
+    }, []);
 
     return (
         <section className="itemDetail">
