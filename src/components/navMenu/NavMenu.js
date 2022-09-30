@@ -14,10 +14,10 @@ const NavMenu = () => {
                 setCurrentUser("Regístrate")
             } else {
                 setCurrentUser("Mi Perfil")
-            }
+            };
         } catch (error) {
-            error = "No se pudo cargar el nuevo Usuario";
-            console.error(error)
+            error = "ERROR";
+            setCurrentUser(error)
         }
     }, [localUser]);
 

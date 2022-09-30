@@ -16,7 +16,7 @@ const FormCheckOut = ({ buyerUser, orderData }) => {
             e.preventDefault();
             if ((buyerUser.user === formData.user) && (buyerUser.password === formData.password)) {
                 pushData("ordenes", { ...orderData, buyer: buyerUser });
-                clearCart("Cart");
+                clearCart();
             } else {
                 setFormulary("form__error")
                 setMessaje1("Error, Reingrese Usuario")

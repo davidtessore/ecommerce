@@ -1,36 +1,33 @@
-.loading {
+.status {
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 80%;
 
     &__img {
-        animation: rotation 0.75s infinite linear;
         position: relative;
-        width: 15%;
-    }
-
-    &__img1 {
-        position: absolute;
-        width: 10%;
+        animation: opacity 3s;
+        width: 25%;
     }
 
     &__paragraph {
-        position: absolute;
-        top: 75%;
+        padding-top: 2%;
+        position: relative;
+        animation: opacity 3s;
         font-size: x-large;
         font-weight: 500;
     }
 }
 
-@keyframes rotation {
+@keyframes opacity {
     from {
-        transform: rotate(0deg);
+        opacity: 0%;
     }
 
     to {
-        transform: rotate(-359deg);
+        opacity: 100%;
     }
 }

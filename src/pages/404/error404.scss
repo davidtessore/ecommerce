@@ -9,9 +9,18 @@
         width: 50%;
     }
 
-    &__img {
+    &__img1,
+    &__img2 {
         position: absolute;
         width: 100%;
+    }
+
+    &__img1 {
+        animation: opacity 4s;
+    }
+
+    &__img2 {
+        animation: opacity 0.5s;
     }
 
     &__containerTitle {
@@ -23,9 +32,20 @@
     }
 
     &__title {
+        animation: opacity 4s;
         text-align: center;
         font-size: 4rem;
         font-weight: bold;
         color: rgb(0, 0, 0);
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
     }
 }

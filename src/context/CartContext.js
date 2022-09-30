@@ -26,8 +26,8 @@ const
             removeProduct = (id) => {
                 setCartProduct(cartProduct.filter(product => product.id !== id));
             },
-            clearCart = (data) => {
-                localStorage.removeItem(data);
+            clearCart = () => {
+                setCartProduct([])
             },
             data = {
                 cartProduct,
