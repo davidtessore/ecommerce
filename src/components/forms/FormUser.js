@@ -27,22 +27,122 @@ const FormUser = () => {
                 ? <div className="form__container">
                     <h2 className="form__title">Ingrese sus datos Personales</h2>
                     <form className="form__forms" onSubmit={check}>
-                        <label className="form__label">Nombre Completo:<br /><input className="form__input" type="text" name="name" value={formUser.name} placeholder=" Nombre y Apellido" onChange={userFormulary} /></label>
-                        <label className="form__label">Telefono:<br /><input className="form__input" type="number" name="phone" value={formUser.phone} placeholder=" Telefono" onChange={userFormulary} /></label>
-                        <label className="form__label">Nuevo Usuario:<br /><input className="form__input" type="text" name="user" value={formUser.user} placeholder=" Nombre Usuario" onChange={userFormulary} /></label>
-                        <label className="form__label">E-mail:<br /><input className="form__input" type="mail" name="mail" value={formUser.mail} placeholder=" E-mail" onChange={userFormulary} /></label>
-                        <label className={formulary}>{messajePassword}<br /><input className="form__input" type="password" name="password" value={formUser.password} placeholder=" Contraseña" onChange={userFormulary} /></label>
-                        <label className={formulary}>{messajePassword2}<br /><input className="form__input" type="password" name="confirmPassword" value={formUser.confirmPassword} placeholder=" Confirmar Contraseña" onChange={userFormulary} /></label>
+                        <label className="form__label">
+                            Nombre Completo:<br />
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="name"
+                                value={formUser.name}
+                                placeholder=" Nombre y Apellido"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className="form__label">
+                            Telefono:<br />
+                            <input
+                                className="form__input"
+                                type="number"
+                                name="phone"
+                                value={formUser.phone}
+                                placeholder=" Telefono"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className="form__label">
+                            Nuevo Usuario:<br />
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="user"
+                                value={formUser.user}
+                                placeholder=" Nombre Usuario"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className="form__label">
+                            E-mail:<br />
+                            <input
+                                className="form__input"
+                                type="mail"
+                                name="mail"
+                                value={formUser.mail}
+                                placeholder=" E-mail"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className={formulary}>
+                            {messajePassword}<br />
+                            <input
+                                className="form__input"
+                                type="password"
+                                name="password"
+                                value={formUser.password}
+                                placeholder=" Contraseña"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className={formulary}>
+                            {messajePassword2}<br />
+                            <input
+                                className="form__input"
+                                type="password"
+                                name="confirmPassword"
+                                value={formUser.confirmPassword}
+                                placeholder=" Confirmar Contraseña"
+                                onChange={userFormulary}
+                            />
+                        </label>
                         <button className="form__button" type="submit">Continuar</button>
                     </form>
                 </div>
                 : <div className="form__container">
                     <h2 className="form__title">Ingrese los datos de Región y Dirección</h2>
                     <form className="form__forms" onSubmit={sendFormUser}>
-                        <label className="form__label">Provincia:<br /><input className="form__input" type="text" name="province" value={formUser.province} placeholder=" Provincia" onChange={userFormulary} /></label>
-                        <label className="form__label">Ciudad:<br /><input className="form__input" type="text" name="city" value={formUser.city} placeholder=" Ciudad" onChange={userFormulary} /></label>
-                        <label className="form__label">Direccion:<br /><input className="form__input" type="text" name="direction" value={formUser.direction} placeholder=" Direccion" onChange={userFormulary} /></label>
-                        <label className="form__label">Codigo Postal:<br /><input className="form__input" type="number" name="postalCode" value={formUser.postalCode} placeholder=" Codigo Postal" onChange={userFormulary} /></label>
+                        <label className="form__label">
+                            Provincia:<br />
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="province"
+                                value={formUser.province}
+                                placeholder=" Provincia"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className="form__label">
+                            Ciudad:<br />
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="city"
+                                value={formUser.city}
+                                placeholder=" Ciudad"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className="form__label">
+                            Direccion:<br />
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="direction"
+                                value={formUser.direction}
+                                placeholder=" Direccion"
+                                onChange={userFormulary}
+                            />
+                        </label>
+                        <label className="form__label">
+                            Codigo Postal:<br />
+                            <input
+                                className="form__input"
+                                type="number"
+                                name="postalCode"
+                                value={formUser.postalCode}
+                                placeholder=" Codigo Postal"
+                                onChange={userFormulary}
+                            />
+                        </label>
                         <button className="form__button" type="submit">Guardar</button>
                     </form>
                 </div>

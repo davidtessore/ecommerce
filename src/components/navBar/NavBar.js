@@ -10,22 +10,18 @@ const NavBar = () => {
     const { quantityProduct } = useContext(CartContext);
 
     return (
-        <nav className="nav">
-            <div className="nav__container">
+        <header>
+            <nav className="nav">
                 <Logo />
-            </div>
-            <div className="nav__container2">
                 <NavMenu />
                 <Seeker />
-            </div>
-            {
-                quantityProduct > 0
-                    ? <div className="nav__container3">
-                        <CartWidget />
-                    </div>
-                    : false
-            }
-        </nav>
+                {
+                    quantityProduct > 0
+                        ? <CartWidget />
+                        : false
+                }
+            </nav>
+        </header>
     );
 };
 

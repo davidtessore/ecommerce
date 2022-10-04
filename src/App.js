@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from "./context/CartContext";
 import ReturnsProvider from "./context/ReturnsContext";
 import UserProvider from "./context/UserContext";
-import NavContainer from "./components/navContainer/NavContainer";
+import NavBar from "./components/navBar/NavBar";
 import ItemDetail from "./components/itemDetail/ItemDetail";
 import Error404 from "./pages/404/Error404";
 import Home from "./pages/home/Home";
@@ -21,7 +21,7 @@ const App = () => {
                 <ReturnsProvider>
                     <CartProvider>
                         <div className="App">
-                            <NavContainer />
+                            <NavBar />
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/productos" element={<Products />} />

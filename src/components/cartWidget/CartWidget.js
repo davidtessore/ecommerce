@@ -8,9 +8,7 @@ const CartWidget = () => {
 
     return (
         <div className="cartWidget">
-            <div className="cartWidget__quantity">
-                <span className="cartWidget__item">{quantityProduct}</span>
-            </div>
+            <p className="cartWidget__item">{quantityProduct}</p>
             <Link className="cartWidget__link" to={"/cart"}><img className="cartWidget__ico" src="/assets/ico/carrito.png" alt="logo carrito" /></Link>
         </div>
     );

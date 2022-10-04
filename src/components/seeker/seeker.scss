@@ -1,38 +1,66 @@
 .seeker {
     grid-area: seeker;
     display: grid;
-    grid-template-columns: 70% 30%;
-    align-items: center;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: "ico show";
+    justify-content: end;
     width: 100%;
     height: 100%;
-    transition: 0.3s;
+
+    &__showSeeker {
+        grid-area: show;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        //animation: width 1s;
+        width: 100%;
+        height: 100%;
+    }
 
     &__search,
     &__button {
-        width: 100%;
         height: 40%;
         border-style: none;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
-        transition: 0.3s;
-        z-index: 1;
-        font-weight: 500;
-        font-size: initial;
+        font-size: 1vw;
         cursor: pointer;
     }
 
-    &__search:hover,
-    &__button:hover {
-        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
-        background-color: rgb(255, 255, 255);
-    }
-
     &__search {
-        border-radius: 5px 0px 0px 5px;
+        font-weight: 400;
+        width: 85%;
+        border-radius: 2px 0px 0px 2px;
         outline: none;
     }
 
     &__button {
-        border-radius: 0px 5px 5px 0px;
-        background-color: rgb(235, 235, 235);
+        font-weight: 500;
+        width: 15%;
+        border-radius: 0px 2px 2px 0px;
+        background-color: rgb(225, 225, 225);
+    }
+
+    &__imgContainer {
+        grid-area: ico;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__img {
+        width: 75%;
+        rotate: 90deg;
+    }
+}
+
+@keyframes width {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
     }
 }
