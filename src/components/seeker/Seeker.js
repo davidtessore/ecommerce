@@ -5,7 +5,8 @@ import dataBase from "../../utils/firebaseConfig";
 
 const Seeker = () => {
     const
-        [searchTerms, setSearchTerms] = useState({ search: "" }),
+        [hidden, setHidden] = useState(true),
+        [searchTerms, setSearchTerms] = useState(""),
         [search, setSearch] = useState([]),
         [result, setResult] = useState([]),
         getDataSeeker = async () => {
@@ -20,10 +21,8 @@ const Seeker = () => {
             return productList
         },
         handleChange = (e) => {
-            setSearchTerms({ ...searchTerms, [e.target.name]: e.target.value })
-        },
-        searchValue = () => {
-            filtered(searchTerms.search)
+            setSearchTerms(e.target.value)
+            filtered(e.target.value)
         },
         filtered = (terms) => {
             const resultSearch = search.filter((element) => {
@@ -32,6 +31,10 @@ const Seeker = () => {
                 }
             })
             setResult(resultSearch)
+        },
+        hiddenSearch = () => {
+            if (hidden !== true) { setHidden(true) }
+            else { setHidden(!true) }
         };
 
     useEffect(() => {
@@ -44,22 +47,20 @@ const Seeker = () => {
                 setResult(e);
             })
     }, []);
+    //console.log(result)
 
     return (
         <div className="seeker">
-            <div className="seeker__imgContainer">
-                <img className="seeker__img" src="/assets/ico/seeker.png" alt="Seeker ico" />
-            </div>
-            <div className="seeker__showSeeker">
+            <div className={hidden === true ? "seeker__hidden" : "seeker__showSeeker"}>
                 <input
                     className="seeker__search"
                     type="search"
                     name="search"
-                    value={searchTerms.search}
+                    value={searchTerms}
                     onChange={handleChange}
                     placeholder=" Busqueda por Marca o Modelo">
                 </input>
-                <button className="seeker__button" onClick={searchValue}>Buscar</button>
+                <img className="seeker__img" src="/assets/ico/seeker.png" alt="Seeker ico" onClick={hiddenSearch} />
             </div>
         </div>
     );
