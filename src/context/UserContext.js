@@ -7,8 +7,8 @@ const
     UserContext = createContext(),
     UserProvider = ({ children }) => {
         const
-            localUser = JSON.parse(localStorage.getItem("UserId")) || false,
             [succesUser, setSuccesUser] = useStorage(localStorage, "UserId"),
+            localUser = JSON.parse(localStorage.getItem("UserId")) || false,
             [formUser, setFormUser] = useState({ name: "", phone: "", user: "", mail: "", password: "", confirmPassword: "", province: "", city: "", direction: "", postalCode: "" }),
             [formData, setFormData] = useState({ user: "", password: "" }),
             userFormulary = (e) => { setFormUser({ ...formUser, [e.target.name]: e.target.value }) },

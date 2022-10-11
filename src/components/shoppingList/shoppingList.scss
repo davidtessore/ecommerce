@@ -1,0 +1,62 @@
+.shoppingList {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 1vw;
+    margin: 1vw;
+
+    &__dataContainer,
+    &__listContainer,
+    &__imgContainer,
+    &__descContainer {
+        display: flex;
+    }
+
+    &__listContainer,
+    &__descContainer {
+        width: 100%;
+    }
+
+    &__dataContainer,
+    &__descContainer {
+        justify-content: space-evenly;
+    }
+
+    &__dataContainer {
+        padding: 0.5vw;
+    }
+
+    &__listContainer {
+        align-items: center;
+    }
+
+    &__imgContainer {
+        margin: 5px;
+        justify-content: center;
+        width: 10vw;
+        height: 6vw;
+    }
+
+    &__img {
+        object-fit: scale-down;
+    }
+
+    &__paragraph {
+        font-weight: 500;
+        font-size: 1vw;
+        color: rgb(100, 100, 100);
+        transition: 0.3s;
+    }
+
+    &__line {
+        border: solid 1px rgb(255, 0, 0);
+    }
+}
+
+.shoppingList:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 1);
+}

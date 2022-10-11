@@ -7,7 +7,6 @@ const
     ReturnsContext = createContext(),
     ReturnsProvider = ({ children }) => {
         const
-            //
             [succesData, setSuccesData] = useStorage(localStorage, "OrderId"),
             pushData = async (indexCollection, order) => {
                 const
@@ -15,7 +14,6 @@ const
                     orderDoc = await addDoc(collectionOrder, order);
                 setSuccesData([...succesData, orderDoc.id]);
             },
-            //
             currentData = (data) => {
                 if (data !== false) { for (let users of data) { return users } }
                 else { return false }
@@ -30,7 +28,6 @@ const
 
                 return product
             },
-            //
             getProductsCollection = async (category, indexCollection) => {
                 const
                     productCollection = collection(dataBase, indexCollection),
