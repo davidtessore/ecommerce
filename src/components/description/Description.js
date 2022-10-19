@@ -5,7 +5,7 @@ const Description = ({ data }) => {
 
     return (
         <div className="description">
-            <h2 className="description__titleDescription">Características</h2>
+            <h2 className="description__title">Características</h2>
             <p className="description__itemDescription">{description}</p>
             <p className="description__itemDescription">{operatingSistem}</p>
             <p className="description__itemDescription">{processor} {cores}</p>
@@ -17,7 +17,10 @@ const Description = ({ data }) => {
             <p className="description__itemDescription">{measures}</p>
             <p className="description__itemDescription">{weight}</p>
             <p className="description__itemDescription">{drums}</p>
-            <span className="description__priceDescription">Precio: ${price}</span>
+            <div className="description__priceContainer">
+                <p className="description__itemPrice">Precio: ${price}</p>
+                <hr className="description__line" />
+            </div>
         </div>
     );
 };

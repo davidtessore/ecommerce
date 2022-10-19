@@ -5,7 +5,7 @@ import dataBase from "../../utils/firebaseConfig";
 
 const Seeker = () => {
     const
-        [hidden, setHidden] = useState(true),
+        [hidden, setHidden] = useState(false),
         [searchTerms, setSearchTerms] = useState(""),
         [search, setSearch] = useState([]),
         [result, setResult] = useState([]),
@@ -33,8 +33,8 @@ const Seeker = () => {
             setResult(resultSearch)
         },
         hiddenSearch = () => {
-            if (hidden !== true) { setHidden(true) }
-            else { setHidden(!true) }
+            if (hidden === false) { setHidden(true) }
+            else { setHidden(false) }
         };
 
     useEffect(() => {
@@ -47,11 +47,10 @@ const Seeker = () => {
                 setResult(e);
             })
     }, []);
-    //console.log(result)
 
     return (
         <div className="seeker">
-            <div className={hidden === true ? "seeker__hidden" : "seeker__showSeeker"}>
+            <div className={hidden === false ? "seeker__hidden" : "seeker__showSeeker"}>
                 <input
                     className="seeker__search"
                     type="search"

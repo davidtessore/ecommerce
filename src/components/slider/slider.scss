@@ -1,8 +1,32 @@
 .sliderContainer {
-    width: 90%;
-    margin: auto;
     overflow: hidden;
     position: relative;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+
+    &__btnContainerL,
+    &__btnContainerR {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.75);
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.3s;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    &__btnContainerL:hover,
+    &__btnContainerR:hover {
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1);
+    }
+
+    &__btnL,
+    &__btnR {
+        width: 100%;
+    }
 
     &__slider {
         display: flex;
@@ -18,26 +42,9 @@
 
     &__img {
         display: block;
-        object-fit: cover;
+        object-fit: scale-down;
         width: 100%;
-        height: 100%;
-    }
-
-    &__btnContainerL,
-    &__btnContainerR {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background-color: rgba(255, 255, 255, 0.75);
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    &__btnContainerL:hover,
-    &__btnContainerR:hover {
-        background-color: white;
+        height: 45vw;
     }
 
     &__btnContainerL {
@@ -46,10 +53,5 @@
 
     &__btnContainerR {
         right: 10px;
-    }
-
-    &__btnL,
-    &__btnR {
-        width: 100%;
     }
 }

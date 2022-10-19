@@ -13,7 +13,7 @@
     &__paragraph,
     &__items {
         font-weight: 500;
-        font-size: large;
+        font-size: 1vw;
     }
 
     &__imgContainer {
@@ -23,8 +23,10 @@
     }
 
     &__img {
-        width: 50%;
+        object-fit: scale-down;
         padding-left: 2%;
+        width: 50%;
+        height: 9vw;
     }
 
     &__descriptionContainer {
