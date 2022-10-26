@@ -1,25 +1,18 @@
 import "./navBar.scss";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
 import Logo from "../logo/Logo";
 import NavMenu from "../navMenu/NavMenu";
 import Seeker from "../seeker/Seeker";
-import CartWidget from "../cartWidget/CartWidget";
+import Widget from "../widget/Widget";
 
 const NavBar = () => {
-    const { quantityProduct } = useContext(CartContext);
 
     return (
         <header>
-            <nav className="nav">
+            <nav className="navBar">
                 <Logo />
                 <NavMenu />
                 <Seeker />
-                {
-                    quantityProduct > 0
-                        ? <CartWidget />
-                        : false
-                }
+                <Widget />
             </nav>
         </header>
     );

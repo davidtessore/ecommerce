@@ -12,14 +12,15 @@ import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact";
 import Registration from "./pages/registration/Registration";
 import Cart from "./pages/cart/Cart";
+import Favourite from "./pages/favourite/Favourite";
 import CheckOut from "./pages/checkout/CheckOut";
 
 const App = () => {
     return (
         <BrowserRouter>
             <UserProvider>
-                <ReturnsProvider>
-                    <CartProvider>
+                <CartProvider>
+                    <ReturnsProvider>
                         <div className="App">
                             <NavBar />
                             <Routes>
@@ -31,12 +32,13 @@ const App = () => {
                                 <Route path="/contacto" element={<Contact />} />
                                 <Route path="/registro" element={<Registration />} />
                                 <Route path="/cart" element={<Cart />} />
+                                <Route path="/favourite" element={<Favourite />} />
                                 <Route path="/checkout" element={<CheckOut />} />
                                 <Route path="*" element={<Error404 />} />
                             </Routes>
                         </div>
-                    </CartProvider>
-                </ReturnsProvider>
+                    </ReturnsProvider>
+                </CartProvider>
             </UserProvider>
         </BrowserRouter>
     );

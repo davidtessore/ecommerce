@@ -1,0 +1,47 @@
+.widget {
+    grid-area: widget;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "favourite cart";
+    height: 100%;
+
+    &__favouriteContainer,
+    &__cartContainer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__favouriteContainer {
+        grid-area: favourite;
+    }
+
+    &__cartContainer {
+        grid-area: cart;
+    }
+
+    &__ico {
+        width: 80%;
+        transition: 0.3s;
+    }
+
+    &__ico:hover {
+        width: 65%;
+        cursor: pointer;
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    &__item {
+        position: absolute;
+        width: 25%;
+        top: 15%;
+        right: 5%;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        font-size: 1vw;
+    }
+}

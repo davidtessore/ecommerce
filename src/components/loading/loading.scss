@@ -7,19 +7,15 @@
     min-height: 80%;
 
     &__img {
-        animation: rotation 0.75s infinite linear;
+        animation: rotation 1s infinite linear;
         position: relative;
-        width: 15%;
-    }
-
-    &__img1 {
-        position: absolute;
-        width: 10%;
+        width: 20%;
     }
 
     &__paragraph {
+        color: rgb(100,100,100);
         position: absolute;
-        top: 75%;
+        top: 85%;
         font-size: x-large;
         font-weight: 500;
     }
@@ -31,6 +27,6 @@
     }
 
     to {
-        transform: rotate(-359deg);
+        transform: rotate(359deg);
     }
 }

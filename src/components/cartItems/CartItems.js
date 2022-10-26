@@ -21,7 +21,7 @@ const CartItems = () => {
                         <div className="cartItems__descriptionContainer">
                             <div className="cartItems__subItemsContainer">
                                 <h2 className="cartItems__subItemsTitle">{product.title}</h2>
-                                <p className="cartItems__paragraph">{product.description}</p>
+                                <p className="cartItems__paragraph">Modelo: {product.description}</p>
                                 <span className="cartItems__items">Cantidad: {product.quantity}</span>
                                 <span className="cartItems__items">Precio: ${product.price}</span>
                             </div>
@@ -31,7 +31,7 @@ const CartItems = () => {
                         </div>
                         <div className="cartItems__buttonContainer">
                             <button className="cartItems__button"><Link className="cartItems__link" to={"/checkout"}>Continuar Compra</Link></button>
-                            <button className="cartItems__button" onClick={productId}><Link className="cartItems__link" to={"#"}>Eliminar del Carrito</Link></button>
+                            <button className="cartItems__button" onClick={productId}>Eliminar del Carrito</button>
                         </div>
                     </div>
                 )

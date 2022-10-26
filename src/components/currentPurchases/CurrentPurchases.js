@@ -8,7 +8,7 @@ import CurrentItems from "./CurrentItems";
 const CurrentPurchases = ({ data }) => {
     const
         { items, buyer, id, total, date } = data,
-        [saveItems, setSaveItems] = useStorage(localStorage, "shopping"),
+        [saveItems, setSaveItems] = useStorage(localStorage, "Shopping"),
         [state, setState] = useState(true),
         [messaje, setMessaje] = useState(""),
         savePurchase = (data) => {

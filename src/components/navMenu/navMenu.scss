@@ -36,9 +36,9 @@
         grid-template-columns: repeat(5, 20%);
         justify-items: center;
         align-items: center;
-        background-color: rgb(30, 40, 70);
+        background-image: linear-gradient(12deg, rgb(50, 20, 70), rgba(130, 0, 255, 0.9));
         transition: 0.3s;
-        border-radius: 0px 0px 5px 5px;
+        border-radius: 0px 0px 3px 3px;
         z-index: 1;
         left: 0;
         top: 100%;
@@ -50,13 +50,13 @@
         color: rgb(200, 200, 200);
         font-weight: 500;
         font-size: 1vw;
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        border-bottom: 1px solid rgba(0, 0, 0, 0);
         transition: 0.3s;
     }
 
     &__link:hover {
         color: rgb(255, 255, 255);
-        border-bottom: 2px solid rgba(225, 225, 225, 1);
+        border-bottom: 1px solid rgba(225, 225, 225, 1);
     }
 }
 

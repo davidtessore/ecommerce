@@ -1,10 +1,10 @@
-.nav {
+.navBar {
     display: grid;
     grid-template-columns: 20% 37% 37% 6%;
-    grid-template-areas: "logo buttons seeker cart";
+    grid-template-areas: "logo buttons seeker widget";
     align-items: center;
-    background-color: rgba(30, 40, 70);
+    background-image: linear-gradient(to right, rgb(50, 20, 70), rgb(130, 0, 255), rgb(50, 20, 70));
     transition: 0.3s;
-    height: 5.5vw;//estaba en 10vh
+    height: 5.5vw;
     width: 100%;
 }
