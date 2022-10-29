@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { ReturnsContext } from "../../context/ReturnsContext";
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import Titles from "../titles/Titles";
 import ShoppingList from "../shoppingList/ShoppingList";
 import Status from "../status/Status";
 
@@ -31,9 +32,11 @@ const SelectUser = () => {
                 {
                     state === false
                         ? <>
-                            <h1 className="selectUser__principalTitle">Mis Datos</h1>
+                            <div className="selectUser__principalTitle">
+                                <Titles data={"Mis Datos"} typeData={1} style={1} />
+                            </div>
                             <div className="selectUser__containerUser">
-                                <h2 className="selectUser__title">Datos Usuario</h2>
+                                <Titles data={"Datos Usuario"} typeData={2} style={2} />
                                 <p className="selectUser__data">Nombre: {name}</p>
                                 <p className="selectUser__data">Usuario: {user}</p>
                                 <p className="selectUser__data">Telefono: {phone}</p>
@@ -41,14 +44,14 @@ const SelectUser = () => {
                                 <p className="selectUser__data">Contraseña: {password}</p>
                             </div>
                             <div className="selectUser__containerLocation">
-                                <h2 className="selectUser__title">Datos Ubicación</h2>
+                                <Titles data={"Datos Ubicación"} typeData={2} style={2} />
                                 <p className="selectUser__data">Provincia: {province}</p>
                                 <p className="selectUser__data">Ciudad: {city}</p>
                                 <p className="selectUser__data">Dirección: {direction}</p>
                                 <p className="selectUser__data">Código Postal: {postalCode}</p>
                             </div>
                             <div className="selectUser__containerId">
-                                <h2 className="selectUser__title">ID de Usuario</h2>
+                                <Titles data={"ID de Usuario"} typeData={2} style={2} />
                                 <p className="selectUser__data">Identificador: {localUser}</p>
                             </div>
                         </>
@@ -58,14 +61,18 @@ const SelectUser = () => {
             {
                 localshopping === false
                     ? <>
-                        <h1 className="selectUser__principalTitle">No se Realizaron Compras</h1>
+                        <div className="selectUser__principalTitle">
+                            <Titles data={"No se Realizaron Compras"} typeData={1} style={1} />
+                        </div>
                         <div className="selectUser__buttonContainer">
                             <button className="selectUser__button"><Link className="selectUser__link" to={"/productos"}>Comprar Algo</Link></button>
                             <button className="selectUser__button"><Link className="selectUser__link" to={"/"}>Ir al Inicio</Link></button>
                         </div>
                     </>
                     : <>
-                        <h1 className="selectUser__principalTitle">Mis compras</h1>
+                        <div className="selectUser__principalTitle">
+                            <Titles data={"Mis compras"} typeData={1} style={1} />
+                        </div>
                         {localshopping.map(item => <ShoppingList data={item} key={item} />)}
                     </>
             }

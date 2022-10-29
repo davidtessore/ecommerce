@@ -1,4 +1,5 @@
 import "./currentPurchases.scss";
+import Titles from "../titles/Titles";
 
 const CurrentBuyer = ({ data }) => {
     const { city, direction, mail, name, phone, postalCode, province } = data;
@@ -6,7 +7,7 @@ const CurrentBuyer = ({ data }) => {
     return (
         <div className="currentPurchases__buyerContainer">
             <div className="currentPurchases__userContainer">
-                <h2 className="currentPurchases__titleUser">Cliente:</h2>
+                <Titles data={"Cliente:"} typeData={3} style={2} />
                 <div className="currentPurchases__itemUserContainer">
                     <p className="currentPurchases__paragraph">Nombre: {name}</p>
                     <p className="currentPurchases__paragraph">Correo Electronico: {mail}</p>
@@ -14,7 +15,7 @@ const CurrentBuyer = ({ data }) => {
                 </div>
             </div>
             <div className="currentPurchases__locationContainer">
-                <h2 className="currentPurchases__titleLocation">Ubicación:</h2>
+                <Titles data={"Ubicación:"} typeData={3} style={2} />
                 <div className="currentPurchases__itemLocationContainer">
                     <p className="currentPurchases__paragraph">Provincia: {province}</p>
                     <p className="currentPurchases__paragraph">Ciudad: {city}</p>

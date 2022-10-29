@@ -1,5 +1,5 @@
 .sliderContainer {
-    overflow: hidden;
+    overflow: clip;
     position: relative;
     margin: auto;
     width: 90%;
@@ -8,8 +8,8 @@
     &__btnContainerL,
     &__btnContainerR {
         position: absolute;
-        width: 30px;
-        height: 30px;
+        width: 2vw;
+        height: 2vw;
         background-color: rgba(255, 255, 255, 0.75);
         top: 50%;
         transform: translateY(-50%);
@@ -20,12 +20,7 @@
 
     &__btnContainerL:hover,
     &__btnContainerR:hover {
-        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1);
-    }
-
-    &__btnL,
-    &__btnR {
-        width: 100%;
+        box-shadow: 0px 0px 15px 0px rgba(50, 20, 70, 1);
     }
 
     &__slider {
@@ -48,10 +43,14 @@
     }
 
     &__btnContainerL {
-        left: 10px;
+        left: 1vw;
     }
 
     &__btnContainerR {
         right: 10px;
+    }
+
+    &__button {
+        width: 100%;
     }
 }

@@ -2,6 +2,7 @@ import "./cartItems.scss";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import Titles from "../titles/Titles";
 
 const CartItems = () => {
     const { cartProduct, removeProduct } = useContext(CartContext);
@@ -20,7 +21,7 @@ const CartItems = () => {
                         </div>
                         <div className="cartItems__descriptionContainer">
                             <div className="cartItems__subItemsContainer">
-                                <h2 className="cartItems__subItemsTitle">{product.title}</h2>
+                                <Titles data={product.title} typeData={2} style={2} />
                                 <p className="cartItems__paragraph">Modelo: {product.description}</p>
                                 <span className="cartItems__items">Cantidad: {product.quantity}</span>
                                 <span className="cartItems__items">Precio: ${product.price}</span>

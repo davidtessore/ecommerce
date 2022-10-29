@@ -1,13 +1,12 @@
 import "./itemList.scss";
 import ProductCard from "../productCard/ProductCard";
 
-const ItemList = ({ dataProducts }) => {
-
+const ItemList = ({ data }) => {
     return (
         <section className="itemList">
-            {dataProducts.map((product) => <ProductCard data={product} key={product.id} />)}
+            {data.map((product) => <ProductCard data={product} key={product.id} />)}
         </section>
     );
 };
 
-export default ItemList
+export default ItemList;

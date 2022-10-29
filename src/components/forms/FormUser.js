@@ -1,6 +1,7 @@
 import "./form.scss";
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import Titles from "../titles/Titles";
 
 const FormUser = () => {
     const
@@ -25,7 +26,7 @@ const FormUser = () => {
         <section className="form">{
             currentForm === false
                 ? <div className="form__container">
-                    <h2 className="form__title">Ingrese sus datos Personales</h2>
+                    <Titles data={"Ingrese sus datos Personales"} typeData={2} style={1} />
                     <form className="form__forms" onSubmit={check}>
                         <label className="form__label">
                             Nombre Completo:<br />
@@ -97,7 +98,7 @@ const FormUser = () => {
                     </form>
                 </div>
                 : <div className="form__container">
-                    <h2 className="form__title">Ingrese los datos de Región y Dirección</h2>
+                    <Titles data={"Ingrese los datos de Región y Dirección"} typeData={2} style={1} />
                     <form className="form__forms" onSubmit={sendFormUser}>
                         <label className="form__label">
                             Provincia:<br />

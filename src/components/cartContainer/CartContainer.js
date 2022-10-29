@@ -2,6 +2,7 @@ import "./cartContainer.scss";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import Titles from "../titles/Titles";
 import CartItems from "../cartItems/CartItems";
 import CartOptions from "../cartOptions/CartOptions";
 
@@ -12,7 +13,7 @@ const CartContainer = () => {
 
     return (
         <section className="cartContainer">
-            <h1 className="cartContainer__title">{condition === true ? "Productos en el Carrito" : "El Carrito está Vacio"}</h1>
+            <Titles data={condition === true ? "Productos en el Carrito" : "El Carrito está Vacio"} typeData={1} style={1} />
             {
                 quantityProduct > 0
                     ? <>

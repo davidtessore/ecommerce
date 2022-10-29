@@ -1,11 +1,13 @@
 import "./description.scss";
+import Titles from "../titles/Titles";
+import Line from "../line/Line";
 
 const Description = ({ data }) => {
     const { description, operatingSistem, processor, cores, ram, storage, screen, graphics, keyboard, measures, weight, drums, price } = data;
 
     return (
         <div className="description">
-            <h2 className="description__title">Características</h2>
+            <Titles data={"Características"} typeData={2} style={1} />
             <p className="description__itemDescription">{description}</p>
             <p className="description__itemDescription">{operatingSistem}</p>
             <p className="description__itemDescription">{processor} {cores}</p>
@@ -19,7 +21,7 @@ const Description = ({ data }) => {
             <p className="description__itemDescription">{drums}</p>
             <div className="description__priceContainer">
                 <p className="description__itemPrice">Precio: ${price}</p>
-                <hr className="description__line" />
+                <Line data={data} />
             </div>
         </div>
     );

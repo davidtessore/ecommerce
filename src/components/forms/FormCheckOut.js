@@ -3,6 +3,7 @@ import { UserContext } from "../../context/UserContext";
 import { ReturnsContext } from "../../context/ReturnsContext";
 import { CartContext } from "../../context/CartContext";
 import { useContext, useState } from "react";
+import Titles from "../titles/Titles";
 
 const FormCheckOut = ({ buyerUser, orderData }) => {
     const
@@ -26,7 +27,7 @@ const FormCheckOut = ({ buyerUser, orderData }) => {
 
     return (
         <div className="form__container">
-            <h2 className="form__title">CheckOut</h2>
+            <Titles data={"CheckOut"} typeData={2} style={1} />
             <form className="form__forms" onSubmit={sendFormData}>
                 <label className={formulary}>{messaje1}<br /><input className="form__input" type="text" name="user" onChange={change} value={formData.user} placeholder=" Usuario" required /></label>
                 <label className={formulary}>{messaje2}<br /><input className="form__input" type="password" name="password" onChange={change} value={formData.password} placeholder=" Contraseña" required /></label>

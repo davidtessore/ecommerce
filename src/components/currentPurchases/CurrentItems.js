@@ -1,4 +1,5 @@
 import "./currentPurchases.scss";
+import Titles from "../titles/Titles";
 
 const CurrentItems = ({ data }) => {
     const { title, img, price, id, quantity } = data;
@@ -8,7 +9,7 @@ const CurrentItems = ({ data }) => {
             <div className="currentPurchases__imgContainer">
                 <img className="currentPurchases__img" src={`/assets/images/${img}`} alt="Imagen de producto" />
             </div>
-            <h3 className="currentPurchases__title">Detalles de Producto:</h3>
+            <Titles data={"Detalles de Producto:"} typeData={3} style={2} />
             <div className="currentPurchases__characteristicContainer">
                 <p className="currentPurchases__paragraph">producto: {title}</p>
                 <p className="currentPurchases__paragraph">precio: ${price}</p>

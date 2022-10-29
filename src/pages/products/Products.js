@@ -8,6 +8,8 @@ const Products = () => {
         [listProducts, setListProducts] = useState([]),
         { getProductsCollection } = useContext(ReturnsContext),
         { category } = useParams();
+        //[pcs, setPcs] = useState(() => { }),
+        //[smartphones, setSmartphones] = useState([]);
 
     useEffect(() => {
         getProductsCollection(category, "productos")
@@ -17,7 +19,7 @@ const Products = () => {
     }, [category]);
 
     return (
-        <ItemList dataProducts={listProducts} />
+        <ItemList data={listProducts} />
     );
 };
 

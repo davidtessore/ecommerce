@@ -1,8 +1,6 @@
-import Loading from "../../components/loading/Loading";
-
 const Home = () => {
     return (
-        <Loading/>
+        <h1>inicio</h1>
     );
 };
 

@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import Titles from "../titles/Titles";
+import Line from "../line/Line";
 
 const ProductCard = ({ data }) => {
     const
@@ -28,14 +30,14 @@ const ProductCard = ({ data }) => {
                 {
                     localUser !== false
                         ? <div className="card__icoContainer">
-                            <img className="card__icoImg" src={`./assets/ico/favourite/${select(data, selection) === false ? "favouriteEmpty.png" : "favouriteRed.png"}`} alt="Icono Favorito" onClick={selectItem} />
-                            <img className="card__icoImg" src={`./assets/ico/carrito/${select(data, cartProduct) === false ? "carritoEmpty.png" : "carritoRed.png"}`} alt="Icono carrito" onClick={addItem} />
+                            <img className="card__icoImg" src={`./assets/ico/favourite/${select(data, selection) === false ? "favouriteEmpty_2.png" : "favouriteRed_2.png"}`} alt="Icono Favorito" onClick={selectItem} />
+                            <img className="card__icoImg" src={`./assets/ico/carrito/${select(data, cartProduct) === false ? "carritoEmpty_2.png" : "carritoRed_2.png"}`} alt="Icono carrito" onClick={addItem} />
                         </div>
                         : null
                 }
-                <hr className={select(data, selection) === false ? "card__line1" : "card__line2"} />
+                <Line data={data} />
                 <div className="card__contentContainer">
-                    <h3 className="card__title">{title}</h3>
+                    <Titles data={title} typeData={3} style={1} />
                     <p className="card__paragraph">{description}</p>
                     <p className="card__price">Precio: ${price}</p>
                 </div>

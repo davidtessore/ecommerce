@@ -1,0 +1,18 @@
+.titles {
+
+    &__1,
+    &__2 {
+        margin: 1vw 0;
+        text-align: center;
+    }
+
+    &__1 {
+        background: linear-gradient(to right, rgb(50, 20, 70), rgb(130, 0, 255), rgb(50, 20, 70));
+        background-clip: text;
+        color: transparent;
+    }
+
+    &__2 {
+        color: rgb(100, 0, 130);
+    }
+}

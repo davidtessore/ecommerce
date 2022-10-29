@@ -2,6 +2,8 @@ import "./itemDetail.scss";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ReturnsContext } from "../../context/ReturnsContext";
+import Titles from "../titles/Titles";
+import Line from "../line/Line";
 import Gallery from "../gallery/Gallery";
 import SliderContainer from "../slider/SliderContainer";
 import Description from "../description/Description";
@@ -23,8 +25,8 @@ const ItemDetail = () => {
 
     return (
         <section className="itemDetail">
-            <h1 className="itemDetail__title">{title}</h1>
-            <hr className="itemDetail__line" />
+            <Titles data={title} typeData={1} style={1} />
+            <Line data={productData} />
             <div className="itemDetail__detail">
                 <div className="itemDetail__imgContainer">
                     <SliderContainer data={productData} />

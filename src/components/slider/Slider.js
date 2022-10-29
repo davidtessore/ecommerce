@@ -28,10 +28,10 @@ const Slider = ({ data }) => {
                 </div>
             </div>
             <div className="sliderContainer__btnContainerL">
-                <img id="btnL" className="sliderContainer__btnL" src="/assets/ico/left.png" alt="Boton Left" />
+                <img id="btnL" className="sliderContainer__button" src="/assets/ico/left.png" alt="Boton Left" />
             </div>
             <div className="sliderContainer__btnContainerR">
-                <img id="btnR" className="sliderContainer__btnR" src="/assets/ico/rigth.png" alt="Boton Rigth" />
+                <img id="btnR" className="sliderContainer__button" src="/assets/ico/rigth.png" alt="Boton Rigth" />
             </div>
         </div>
     );

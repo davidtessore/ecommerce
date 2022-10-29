@@ -12,7 +12,7 @@ const Widget = () => {
                 quantityProduct > 0
                     ? <div className="widget__cartContainer">
                         <p className="widget__item">{quantityProduct}</p>
-                        <Link className="widget__link" to={"/cart"}><img className="widget__ico" src="/assets/ico/carrito/carritoRed.png" alt="logo carrito" /></Link>
+                        <Link className="widget__link" to={"/cart"}><img className="widget__ico" src="/assets/ico/carrito/carritoRed_1.png" alt="logo carrito" /></Link>
                     </div>
                     : null
             }
@@ -20,7 +20,7 @@ const Widget = () => {
                 quantityFavourite > 0
                     ? <div className="widget__favouriteContainer">
                         <p className="widget__item">{quantityFavourite}</p>
-                        <Link className="widget__link" to={"/favourite"}><img className="widget__ico" src="/assets/ico/favourite/favouriteRed.png" alt="logo favoritos" /></Link>
+                        <Link className="widget__link" to={"/favourite"}><img className="widget__ico" src="/assets/ico/favourite/favouriteRed_1.png" alt="logo favoritos" /></Link>
                     </div>
                     : null
             }
