@@ -1,10 +1,14 @@
 import "./itemList.scss";
-import ProductCard from "../productCard/ProductCard";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import ItemCategoryContainer from "../itemCategory/ItemCategoryContainer";
 
 const ItemList = ({ data }) => {
+    const { listCategories } = useContext(CartContext);
+
     return (
         <section className="itemList">
-            {data.map((product) => <ProductCard data={product} key={product.id} />)}
+            {listCategories.map(item => <ItemCategoryContainer data={data} key={item.key} category={item.category} title={item.title} />)}
         </section>
     );
 };

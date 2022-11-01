@@ -25,7 +25,7 @@ const ItemDetail = () => {
 
     return (
         <section className="itemDetail">
-            <Titles data={title} typeData={1} style={1} />
+            <Titles title={title} sizeTitle={1} styleTitle={1} />
             <Line data={productData} />
             <div className="itemDetail__detail">
                 <div className="itemDetail__imgContainer">

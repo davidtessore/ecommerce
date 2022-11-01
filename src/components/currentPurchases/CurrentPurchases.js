@@ -31,12 +31,12 @@ const CurrentPurchases = ({ data }) => {
         <>{
             state === true
                 ? <div className="currentPurchases">
-                    <Titles data={`Detalles de tu compra: ${id}`} typeData={1} style={1} />
+                    <Titles title={`Detalles de tu compra: ${id}`} sizeTitle={1} styleTitle={1} />
                     <CurrentBuyer data={buyer} />
-                    <Titles data={"Productos"} typeData={2} style={1} />
+                    <Titles title={"Productos"} sizeTitle={2} styleTitle={1} />
                     {items.map((item) => <CurrentItems data={item} key={item.id} />)}
                     <div className="currentPurchases__generalContainer">
-                        <Titles data={"Detalles de la Compra"} typeData={2} style={1} />
+                        <Titles title={"Detalles de la Compra"} sizeTitle={2} styleTitle={1} />
                         <div className="currentPurchases__detailContainer">
                             <p className="currentPurchases__paragraph">Identificador de compra: {id}</p>
                             <p className="currentPurchases__paragraph">El total de esta compra es: ${total}</p>

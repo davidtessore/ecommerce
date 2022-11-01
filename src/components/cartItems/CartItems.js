@@ -21,7 +21,7 @@ const CartItems = () => {
                         </div>
                         <div className="cartItems__descriptionContainer">
                             <div className="cartItems__subItemsContainer">
-                                <Titles data={product.title} typeData={2} style={2} />
+                                <Titles title={product.title} sizeTitle={2} styleTitle={2} />
                                 <p className="cartItems__paragraph">Modelo: {product.description}</p>
                                 <span className="cartItems__items">Cantidad: {product.quantity}</span>
                                 <span className="cartItems__items">Precio: ${product.price}</span>

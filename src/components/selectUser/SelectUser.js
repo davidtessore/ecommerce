@@ -33,10 +33,10 @@ const SelectUser = () => {
                     state === false
                         ? <>
                             <div className="selectUser__principalTitle">
-                                <Titles data={"Mis Datos"} typeData={1} style={1} />
+                                <Titles title={"Mis Datos"} sizeTitle={1} styleTitle={1} />
                             </div>
                             <div className="selectUser__containerUser">
-                                <Titles data={"Datos Usuario"} typeData={2} style={2} />
+                                <Titles title={"Datos Usuario"} sizeTitle={2} styleTitle={2} />
                                 <p className="selectUser__data">Nombre: {name}</p>
                                 <p className="selectUser__data">Usuario: {user}</p>
                                 <p className="selectUser__data">Telefono: {phone}</p>
@@ -44,14 +44,14 @@ const SelectUser = () => {
                                 <p className="selectUser__data">Contraseña: {password}</p>
                             </div>
                             <div className="selectUser__containerLocation">
-                                <Titles data={"Datos Ubicación"} typeData={2} style={2} />
+                                <Titles title={"Datos Ubicación"} sizeTitle={2} styleTitle={2} />
                                 <p className="selectUser__data">Provincia: {province}</p>
                                 <p className="selectUser__data">Ciudad: {city}</p>
                                 <p className="selectUser__data">Dirección: {direction}</p>
                                 <p className="selectUser__data">Código Postal: {postalCode}</p>
                             </div>
                             <div className="selectUser__containerId">
-                                <Titles data={"ID de Usuario"} typeData={2} style={2} />
+                                <Titles title={"ID de Usuario"} sizeTitle={2} styleTitle={2} />
                                 <p className="selectUser__data">Identificador: {localUser}</p>
                             </div>
                         </>
@@ -62,7 +62,7 @@ const SelectUser = () => {
                 localshopping === false
                     ? <>
                         <div className="selectUser__principalTitle">
-                            <Titles data={"No se Realizaron Compras"} typeData={1} style={1} />
+                            <Titles title={"No se Realizaron Compras"} sizeTitle={1} styleTitle={1} />
                         </div>
                         <div className="selectUser__buttonContainer">
                             <button className="selectUser__button"><Link className="selectUser__link" to={"/productos"}>Comprar Algo</Link></button>
@@ -71,7 +71,7 @@ const SelectUser = () => {
                     </>
                     : <>
                         <div className="selectUser__principalTitle">
-                            <Titles data={"Mis compras"} typeData={1} style={1} />
+                            <Titles title={"Mis compras"} sizeTitle={1} styleTitle={1} />
                         </div>
                         {localshopping.map(item => <ShoppingList data={item} key={item} />)}
                     </>

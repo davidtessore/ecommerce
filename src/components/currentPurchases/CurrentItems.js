@@ -9,7 +9,7 @@ const CurrentItems = ({ data }) => {
             <div className="currentPurchases__imgContainer">
                 <img className="currentPurchases__img" src={`/assets/images/${img}`} alt="Imagen de producto" />
             </div>
-            <Titles data={"Detalles de Producto:"} typeData={3} style={2} />
+            <Titles title={"Detalles de Producto:"} sizeTitle={3} styleTitle={2} />
             <div className="currentPurchases__characteristicContainer">
                 <p className="currentPurchases__paragraph">producto: {title}</p>
                 <p className="currentPurchases__paragraph">precio: ${price}</p>

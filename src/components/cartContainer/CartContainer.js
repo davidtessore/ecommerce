@@ -13,7 +13,7 @@ const CartContainer = () => {
 
     return (
         <section className="cartContainer">
-            <Titles data={condition === true ? "Productos en el Carrito" : "El Carrito está Vacio"} typeData={1} style={1} />
+            <Titles title={condition === true ? "Productos en el Carrito" : "El Carrito está Vacio"} sizeTitle={1} styleTitle={1} />
             {
                 quantityProduct > 0
                     ? <>

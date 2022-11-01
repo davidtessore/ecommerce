@@ -7,7 +7,7 @@ const Description = ({ data }) => {
 
     return (
         <div className="description">
-            <Titles data={"Características"} typeData={2} style={1} />
+            <Titles title={"Características"} sizeTitle={2} styleTitle={1} />
             <p className="description__itemDescription">{description}</p>
             <p className="description__itemDescription">{operatingSistem}</p>
             <p className="description__itemDescription">{processor} {cores}</p>

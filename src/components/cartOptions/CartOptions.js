@@ -11,7 +11,7 @@ const CartOptions = () => {
 
     return (
         <div className="cartOptions">
-            <Titles data={`Total en el Carrito: $${totalPrice}`} typeData={2} style={1} />
+            <Titles title={`Total en el Carrito: $${totalPrice}`} sizeTitle={2} styleTitle={1} />
             <button className="cartOptions__button"><Link className="cartOptions__link" to={"/checkout"}>{condition === true ? "Comprar Todo" : "Comprar"}</Link></button>
             <button className="cartOptions__button" onClick={clearCart}>{condition === true ? "Eliminar Todo" : "Eliminar"}</button>
         </div>

@@ -27,7 +27,7 @@ const FormCheckOut = ({ buyerUser, orderData }) => {
 
     return (
         <div className="form__container">
-            <Titles data={"CheckOut"} typeData={2} style={1} />
+            <Titles title={"CheckOut"} sizeTitle={2} styleTitle={1} />
             <form className="form__forms" onSubmit={sendFormData}>
                 <label className={formulary}>{messaje1}<br /><input className="form__input" type="text" name="user" onChange={change} value={formData.user} placeholder=" Usuario" required /></label>
                 <label className={formulary}>{messaje2}<br /><input className="form__input" type="password" name="password" onChange={change} value={formData.password} placeholder=" Contraseña" required /></label>

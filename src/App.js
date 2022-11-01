@@ -31,9 +31,9 @@ const App = () => {
                                 <Route path="/servicios" element={<Services />} />
                                 <Route path="/contacto" element={<Contact />} />
                                 <Route path="/registro" element={<Registration />} />
-                                <Route path="/cart" element={<Cart />} />
-                                <Route path="/favourite" element={<Favourite />} />
                                 <Route path="/checkout" element={<CheckOut />} />
+                                <Route path="/favourite" element={<Favourite />} />
+                                <Route path="/cart" element={<Cart />} />
                                 <Route path="*" element={<Error404 />} />
                             </Routes>
                         </div>

@@ -5,6 +5,13 @@ const
     CartContext = createContext(),
     CartProvider = ({ children }) => {
         const
+            listCategories = [
+                { key: 1, category: "pcs", title: "Pc's" },
+                { key: 2, category: "smartphones", title: "Smartphone's" },
+                { key: 3, category: "tablets", title: "Tablets" },
+                { key: 4, category: "impresoras", title: "Impresoras" },
+                { key: 5, category: "accesorios", title: "Accesorios" },
+            ],
             [cartProduct, setCartProduct] = useStorage(localStorage, "Cart"),
             [selection, setSelection] = useStorage(localStorage, "Store"),
             quantityProduct = cartProduct.length,
@@ -43,6 +50,7 @@ const
                 else { setSelect([...select, data]) }
             },
             data = {
+                listCategories,
                 cartProduct,
                 setCartProduct,
                 selection,

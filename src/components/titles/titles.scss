@@ -1,10 +1,8 @@
 .titles {
-
-    &__1,
-    &__2 {
-        margin: 1vw 0;
-        text-align: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw 0;
 
     &__1 {
         background: linear-gradient(to right, rgb(50, 20, 70), rgb(130, 0, 255), rgb(50, 20, 70));

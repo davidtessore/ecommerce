@@ -37,7 +37,7 @@ const ProductCard = ({ data }) => {
                 }
                 <Line data={data} />
                 <div className="card__contentContainer">
-                    <Titles data={title} typeData={3} style={1} />
+                    <Titles title={title} sizeTitle={3} styleTitle={1} />
                     <p className="card__paragraph">{description}</p>
                     <p className="card__price">Precio: ${price}</p>
                 </div>
